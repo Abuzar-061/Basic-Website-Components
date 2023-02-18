@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List And Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        body {
+            width: 100%;
+            background: url(img/stars.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        table {
+            border: 1px solid white;
+            border-collapse: collapse;
+
+        }
+
+        h2 {
+            color: yellow;
+        }
+
+        td {
+            border: 1px solid white;
+            padding: 10px;
+
+        }
+
+        th {
+            padding: 10px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- List and Table -->
+    <h1 style="background-color: Yellow;">List</h1>
+    <h2>UnOrdered List</h2>
+    <ul type="square">
+        <li>Abuzar</li>
+        <li>Zouraiz</li>
+        <li>Faheem</li>
+    </ul>
+    </ul>
+    <h2>Ordered List</h2>
+    <ol type="I">
+        <li>Abuzar</li>
+        <li>Faheem</li>
+        <li>Zouraiz</li>
+    </ol>
+    <br>
+    <h1 style="background-color: Yellow ;">Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Employee Id</th>
+                <th>Employee Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Abuzar</td>
+                <td>061</td>
+                <td>Programmer</td>
+            </tr>
+            <tr>
+                <td rowspan="1">Zouraiz</td>
+                <td>124</td>
+                <td>Programmer</td>
+            </tr>
+            <tr>
+                <td>Faheem</td>
+                <td>129</td>
+                <td>Digital Marketing</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

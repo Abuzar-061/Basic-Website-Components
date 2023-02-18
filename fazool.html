@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="fazool.js"></script>
+</head>
+<body>
+    Enter your name: <input type="text" id="fnm" onblur="Functa()">
+    <p>when the function a is triggered then the input text gets converted into upper case</p>
+
+
+    <form>
+        Choose which subject you like and will prefer:
+        <select id="subjects" onchange="liked&preferred()">
+            <option value="Chemistry">Chemistry</option>
+            <option value="Physics">Physics</option>
+            <option value="Maths">Maths</option>
+        </select>
+    </form>
+    <input type="text" onfocus="highlightInput()">
+    <button type="button">Button</button>
+</body>
+
+</html>

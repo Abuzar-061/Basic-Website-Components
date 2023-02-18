@@ -1,0 +1,15 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "explorer.confirmDelete": false,
+    "liveServer.settings.fullReload": true,
+    "files.autoSaveDelay": 600,
+    "emmet.preferences": {
+    
+    },
+    "emmet.excludeLanguages": [],
+    "files.autoSave": "afterDelay",
+    "editor.codeActionsOnSave": {
+    
+    }
+}

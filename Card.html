@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Now</title>
+  <link rel="shortcut icon" href="img/cart.png" type="image/x-icon">
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .service {
+      width: 100%;
+      justify-content: center;
+      border-top: 5px solid rgb(167, 127, 20);
+      background-color: #232533;
+    }
+
+    .card h2 {
+      color: rgb(167, 127, 20);
+    }
+
+    .services {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      text-align: center;
+      justify-content: center;
+      margin: 8px;
+      width: 203px;
+      height: 440px;
+      border: 1px solid white;
+      background-color: #323444;
+    }
+
+    .card img {
+      border-bottom: 2px solid rgb(85, 78, 78);
+      background-position: center;
+      background-size: cover;
+      transition: all 0.5s ease-in-out;
+      overflow: hidden;
+    }
+
+    .card img:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .card p {
+      color: gray;
+      padding: 10px;
+    }
+
+    .btn {
+      margin-top: 5px;
+      background-image: linear-gradient(45deg, rgba(167, 128, 20, 0.918)50%, transparent 50%);
+      background-repeat: no-repeat;
+      background-size: 500px;
+      background-position: 0%;
+      padding: 10px;
+      border-radius: 5px;
+      width: 180px;
+    }
+
+    .btn a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-position: 100%;
+      background-color: rgba(154, 120, 26, 0.347);
+      transition: 1.5s;
+      border: 2px solid white;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgb(167, 127, 20), 0 0 30px rgb(167, 127, 20), 0 0 80px rgb(167, 127, 20);
+    }
+
+    .service h1 span {
+      font-size: 150px;
+      color: rgb(167, 127, 20);
+    }
+
+    .service h1 {
+      color: white;
+      display: flex;
+      justify-content: center;
+      font-size: 50px;
+    }
+
+    .service span:hover {
+      filter: invert(100%);
+      cursor: grab;
+    }
+
+    .card-img {
+      overflow: hidden;
+      width: 202px;
+      height: 202px;
+    }
+
+    .btn2 {
+      position: fixed;
+      margin: 10px;
+      border: none;
+      background: transparent;
+    }
+
+    .back ion-icon {
+      margin-left: 10px;
+      font-size: 50px;
+      color: rgb(167, 127, 20);
+      transition: 0.9s;
+    }
+
+    .card-ion ion-icon {
+      color: gray;
+      font-size: 25px;
+      margin: 10px;
+    }
+    .back ion-icon:hover{
+      color: white;
+    }
+
+    ion-icon:hover {
+      color: white;
+    }
+
+    .btn a {
+      color: #232533;
+      font-size: 15px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .contact {
+      width: 70px;
+      background: url(img/message-logo.jpg);
+      filter: invert(100%);
+      background-position: center;
+      background-size: cover;
+      color: white;
+      display: flex;
+      border: 1px solid white;
+      bottom: 10px;
+      position: fixed;
+      border-radius: 50px;
+      padding: 30px;
+      right: 10px;
+      transition: 0.8s;
+    }
+
+    .contact:hover {
+      filter: invert(0%);
+      width: 100px;
+      cursor: pointer;
+    }
+
+    /* --------------------------------Footer---------------------------- */
+    footer{
+      color: white;
+        border-top: 5px solid rgb(167, 127, 20);
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        width: 100%;
+        height: 50vh;
+        background-color: black;
+      }
+      footer a{
+        color: white;
+      }
+      .icon a {
+         text-decoration: none;
+         color: white;
+      }
+
+      .icon ion-icon {
+         color: white;
+         font-size: 20px;
+         margin-top: 5px;
+         padding-right: 10px;
+      }
+
+      ion-icon:hover{
+         color: rgb(167, 127, 20);
+      }
+      footer h1 span{
+        color: rgb(167, 127, 20);
+        font-size: 50px;
+      }
+      .support{
+        display: flex;
+        flex-direction: column;
+      }
+      .support a{
+        text-decoration: none;
+        padding-top: 10px;
+      }
+      .support a:hover{
+        color: rgb(167, 127, 20);
+      }
+      .signup{
+        display: flex;
+        flex-direction: column;
+      }
+      .signup input{
+        color: white;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.653);
+        outline: none;
+        width: 200px;
+        height: 30px;
+        
+      }
+       .btn5{
+        margin-top: 20px;
+        width: 100px;
+        height: 40px;
+        background-color: rgb(167, 127, 20);
+        cursor: pointer;
+        transition: 0.8s ease-in-out;
+      }
+      .btn5 a{
+        text-decoration: none;
+        font-family: serif;
+        font-size: 20px;
+      }
+      .btn5:hover{
+        border: none;
+        background-color: #232533;
+      }
+      h3 span{
+        color: orangered;
+        font-size: 23px;
+      }
+      h3{
+        color: white;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="contact" onclick="sticky()"><span id="message"></span></div>
+  <!-- -------------New Section-------------- -->
+  <section class="service" id="Services">
+    <button class="btn2" id="btn"><a href="firstpage.html" class="back"><ion-icon name="arrow-back-outline"></ion-icon></a></button>
+
+
+    <!-- --------------------------Watches Section------------------------------- -->
+    <h1><span>W</span>ATCHES</h1>
+
+    <div class="services">
+      <div class="card">
+        <div class="card-img">
+          <img src="img/watchess.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>ROSEFIELD</h2>
+        <p>Luxury Best Watch Black strap Analog Watch For Men Best decent watch for Men</p>
+        <h3><span>Rs.</span> 3000</h3>
+        <button class="btn" onclick="watches()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/product-8.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>FOSSIL WATCH</h2>
+        <p>Luxury Best Watch Black strap Analog Watch For Men Best decent watch for Men</p>
+        <h3><span>Rs.</span> 2500</h3>
+        <button class="btn" onclick="watches()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/product-9.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>ROADTER</h2>
+        <p>Luxury Best Watch Black strap Analog Watch For Men Best decent watch for Men</p>
+        <h3><span>Rs.</span> 4000</h3>
+        <button class="btn" onclick="watches()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/watches2.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>APPLE I7</h2>
+        <p>Luxury Best Watch Black strap Analog Watch For Men Best decent watch for Men</p>
+        <h3><span>Rs.</span> 10,000</h3>
+        <button class="btn" onclick="watches()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- -------------Shirt's-------------- -->
+  <section class="service" id="Services">
+    <h1><span>S</span>HIRT's</h1>
+
+    <div class="services">
+      <div class="card">
+        <div class="card-img">
+          <img src="img/shirt.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>POLO</h2>
+        <p>The Vinatage Clothing pack of 5 multicolour plain half sleeves T shirt for men</p>
+        <h3><span>Rs.</span> 1000</h3>
+        <button class="btn" onclick="shirts()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/shirt2.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>AUTONET</h2>
+        <p>The Vinatage Clothing pack of 5 multicolour plain half sleeves T shirt for men</p>
+        <h3><span>Rs.</span> 2000</h3>
+        <button class="btn" onclick="shirts()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/shirtssss.jpeg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>PRADA</h2>
+        <p>The Vinatage Clothing pack of 5 multicolour plain half sleeves T shirt for men</p>
+        <h3><span>Rs.</span> 1000</h3>
+        <button class="btn" onclick="shirts()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/shirtsss.jpeg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>ALVI</h2>
+        <p>The Vinatage Clothing pack of 5 multicolour plain half sleeves T shirt for men</p>
+        <h3><span>Rs.</span> 2000</h3>
+        <button class="btn" onclick="shirts()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- -------------New Section-------------- -->
+  <section class="service" id="Services">
+    <h1><span>S</span>OES</h1>
+    <div class="services">
+      <div class="card">
+        <div class="card-img">
+          <img src="img/product-11.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>ADDIDAS</h2>
+        <p>Men's Running Shoes Men's Slip-on Shoes Tennis Walking Casual Shoes</p>
+        <h3><span>Rs.</span> 13,000</h3>
+        <button class="btn" onclick="shoes()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/product-10.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>X-TRON</h2>
+        <p>Men's Running Shoes Men's Slip-on Shoes Tennis Walking Casual Shoes</p>
+        <h3><span>Rs.</span> 7000</h3>
+        <button class="btn" onclick="shoes()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/product-2.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>H-RX</h2>
+        <p>Men's Running Shoes Men's Slip-on Shoes Tennis Walking Casual Shoes</p>
+        <h3><span>Rs.</span> 12,000</h3>
+        <button class="btn" onclick="shoes()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/product-5.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>GUCCI</h2>
+        <p>Men's Running Shoes Men's Slip-on Shoes Tennis Walking Casual Shoes</p>
+        <h3><span>Rs.</span> 20,000</h3>
+        <button class="btn" onclick="shoes()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- -------------New Section-------------- -->
+  <section class="service" id="Services">
+    <h1><span>T</span>ROUSER's</h1>
+    <div class="services">
+      <div class="card">
+        <div class="card-img">
+          <img src="img/product-3.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>GRAY TROUSER</h2>
+        <p>New Design Winter Black Trouser In Trouser in export Quality</p>
+        <h3><span>Rs.</span> 1000</h3>
+        <button class="btn" onclick="trouser()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/product-12.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>BLCK-TROUSER</h2>
+        <p>New Design Winter Black Trouser In Trouser in export Quality</p>
+        <h3><span>Rs.</span> 1500</h3>
+        <button class="btn" onclick="trouser()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/trouser.jpg" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>BLACK-PANT</h2>
+        <p>New Design Winter Black Trouser In Trouser in export Quality</p>
+        <h3><span>Rs.</span> 5000</h3>
+        <button class="btn" onclick="trouser()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/trouser1.webp" alt="Reload" height="100%" width="100%">
+        </div>
+        <h2>GRAY-PANT</h2>
+        <p>New Design Winter Black Trouser In Trouser in export Quality</p>
+        <h3><span>Rs.</span> 5000</h3>
+        <button class="btn" onclick="trouser()"><a href="#">Add To Cart</a></button>
+        <div class="card-ion">
+          <a href=""><ion-icon name="heart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="cart-outline"></ion-icon></a>
+          <a href=""><ion-icon name="bookmark-outline"></ion-icon></a>
+          <a href=""><ion-icon name="share-social-outline"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <footer>
+    <div class="icon">
+      <h1><span>W</span>eb <span>D</span>eveloper</h1>
+      <br>
+        <a href="https://www.facebook.com/abuzar.munir.545/" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="https://www.instagram.com/error_404__0_0__/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="https://twitter.com/i/flow/login" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+        <a href="https://www.skype.com/en/" target="_blank"><ion-icon name="logo-skype"></ion-icon></a>
+        <a href="https://www.google.com/" target="_blank"><ion-icon name="logo-google"></ion-icon></a>
+     </div>
+     <div class="support">
+      <h1><span>S</span>upport</h1>
+      <a href="#Contactus">Contact Us</a>
+      <a href="https://en.wikipedia.org/wiki/FAQ" target="_blank">FAQ</a>
+      <a href="https://www.google.com/maps/place/Samanabad,+Faisalabad,+Punjab,+Pakistan/@31.3895822,73.0583756,15.2z/data=!4m5!3m4!1s0x39225d49afde6e87:0x59de94db4a123a7b!8m2!3d31.3871056!4d73.0677139" target="_blank">Address</a>
+    </div>
+     <div class="signup">
+      <h1><ion-icon name="mail-outline" style="color: white;"></ion-icon> <span>S</span>tay upto date</h1>
+      <input type="email" placeholder="Enter your email-address" id="email2">
+      <button class="btn5" onclick="signup()"><a href="#">Sign up</a></button>
+     </div>
+</footer>
+<script>
+  // ---------------Footer address------------------------
+  function address(){
+    alert("Anarkali Street no 1,Shop Name BF Collections, Samnabad,Faisalabad")
+  }
+  // ---------------Sign-up-------------------------------
+  var email = document.getElementById("email2")
+    function signup(){
+      if(email.value ==""){
+        alert("Please enter your email first before sign-up")
+      }
+      else{
+        alert("Sign-up Successfully")
+      }
+    }
+  // ------------------------------------------------------------------
+  function watches(){
+    if(confirm("Please confirm your order!")){
+      var email = window.prompt("Enter Your Email")
+      alert("Your order is placed " +" we will contact you at your given email " + email);
+    }
+    else if(!confirm("Your order is canceled")){
+
+    }
+  }
+  // ------------------------------------------------------------------
+
+  function shirts(){
+    if(confirm("Please confirm your order!")){
+      var email = window.prompt("Enter Your Email")
+      alert("Your order is placed " +" we will contact you at your given email " + email);
+    }
+    else if(!confirm("Your order is canceled")){
+
+    }
+  }
+  // ------------------------------------------------------------------
+
+  function shoes(){
+    if(confirm("Please confirm your order!")){
+      var email = window.prompt("Enter Your Email")
+      alert("Your order is placed " +" we will contact you at your given email " + email);
+    }
+    else if(!confirm("Your order is canceled")){
+
+    }
+  }
+  // ------------------------------------------------------------------
+
+  function trouser(){
+    if(confirm("Please confirm your order!")){
+      var email = window.prompt("Enter Your Email")
+      alert("Your order is placed " +" we will contact you at your given email " + email);
+    }
+    else if(!confirm("Your order is canceled")){
+
+    }
+  }
+  // ------------------------------------------------------------------
+
+  function sticky(){
+      var contact = window.prompt("How Can i help you");
+      alert("Your mesage is in queue we will respond you soon at your email");
+      var emll = window.prompt("Please enter your email");
+      alert("We will contact you soon.Thanks for contacting us ");
+    }
+
+</script>
+</body>
+
+</html>

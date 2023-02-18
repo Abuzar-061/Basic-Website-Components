@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords">
+  <meta name="description" content="....">
+  <!-- ----------------------------Page Title------------------------------------ -->
+  <title>E-commerce Website</title>
+  <link rel="shortcut icon" href="img/applelogo.png">
+  <!-- --------------------------JS Only For Icons------------------------------- -->
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  <!-- ----------------------------CSS Style------------------------------------- -->
+  <style>
+    /* ---------------------------Value Store In Root variable------------------------------- */
+    :root {
+      --abuzar1: url(img/stars.jpg);
+      --abuzar2: url(img/sky-3343302_1280.jpg);
+      --abuzar3: url(img/forest.jpg);
+
+
+    }
+
+    /* ---------------------------Value Store In dark variable------------------------------- */
+    .dark {
+      --abuzar1: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(img/stars.jpg);
+      --abuzar2: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(img/sky-3343302_1280.jpg);
+      --abuzar3: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(img/forest.jpg);
+
+    }
+
+    /* ----------------------------------Styling Start-------------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      color: white;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* scroll-behavior: smooth; */
+      background-color: black;
+    }
+
+    /* --------------------------Scroll Behaviour-------------------------- */
+    html::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    html::-webkit-scrollbar-thumb {
+      background-color: #039788a8;
+      border-bottom-left-radius: 100%;
+      border-bottom-right-radius: 100%;
+    }
+
+    html::-webkit-scrollbar-track {
+      background-color: black;
+    }
+
+    /* --------------------------Message Box Sticky Icon-------------------------- */
+    .contact {
+      width: 70px;
+      height: 70px;
+      background: url(img/message-logo.jpg);
+      filter: invert(100%);
+      background-position: center;
+      background-size: cover;
+      color: white;
+      display: flex;
+      border: 1px solid white;
+      bottom: 10px;
+      position: fixed;
+      border-radius: 50px;
+      padding: 30px;
+      right: 10px;
+      transition: 0.8s;
+    }
+
+    .contact:hover {
+      filter: invert(0%);
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+    }
+
+    /* <!-- ----------------------------Background------------------------------ --> */
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-image: var(--abuzar1);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }
+
+    .container img {
+      filter: invert(100%);
+    }
+
+    /* <!-- ----------------------------Nav Section------------------------------- --> */
+    nav {
+      width: 100%;
+      background-color: rgba(128, 128, 128, 0.411);
+      height: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 20px 4%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid white;
+    }
+
+    nav ul {
+      display: flex;
+    }
+
+    nav li {
+      list-style: none;
+
+    }
+
+    nav li a {
+      text-decoration: none;
+      margin: 50px;
+      padding: 20px;
+      transition: 0.8s;
+    }
+
+    nav a:hover {
+      color: black;
+      border-bottom: 1px solid white;
+    }
+
+    nav img:hover {
+      filter: invert(0%);
+      cursor: pointer;
+    }
+
+    .ion {
+      font-size: 20px;
+    }
+
+    /* -----------------------------Toggle-Button------------------------------- */
+    .checkbox {
+      opacity: 0;
+      position: absolute;
+    }
+
+    .label {
+      background-color: rgb(17, 17, 17);
+      border-radius: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px;
+      position: relative;
+      height: 26px;
+      width: 50px;
+    }
+
+    .ball {
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      height: 22px;
+      width: 22px;
+      transform: translateX(0px);
+      transition: transform 0.2s linear;
+    }
+
+    .checkbox:checked+.label .ball {
+      transform: translateX(24px);
+    }
+
+
+    .ion {
+      color: #f1c40f;
+    }
+
+    /* --------------------------First Page Section------------------------------ */
+    .content h1 {
+      font-size: 80px;
+    }
+
+    span {
+      transition: 0.8s;
+    }
+
+    span:hover {
+      cursor: grab;
+      filter: invert(100%);
+    }
+
+    .content h1 span {
+      font-size: 150px;
+      color: Black;
+    }
+
+    .content p {
+      color: white;
+    }
+
+    .btn1 {
+      margin: 30px;
+      padding: 10px;
+      background: transparent;
+      border: 1px solid #039788;
+      border-radius: 30px;
+      transition: 0.8s;
+    }
+
+    .btn1:hover {
+      background-color: black;
+      border: 1px solid white;
+      left: 0;
+      bottom: 0;
+    }
+
+    .btn1 a {
+      font-family: serif;
+      font-size: 20px;
+      margin: 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* -------------------------Second Page Content-------------------------- */
+    .container2 {
+      background-image: var(--abuzar2);
+      width: 100%;
+      height: 100vh;
+      justify-content: center;
+      display: flex;
+      border-top: 5px solid black;
+    }
+
+    .content2 h1 {
+      font-size: 80px
+    }
+
+    .content2 h1 span {
+      font-size: 150px;
+      color: Black;
+    }
+
+    .content2 select {
+      border: 1px solid white;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background-color: black;
+      font-family: serif;
+      font-size: 20px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .btnnn1 {
+      width: 100px;
+      margin-left: 10px;
+      padding: 18px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border: 1px solid white;
+      background-color: black;
+      cursor: pointer;
+      font-family: serif;
+      font-size: 24px;
+    }
+
+    .formm {
+      margin-top: 100px;
+      display: flex;
+    }
+
+    /* -----------------------Service Page Section--------------------------- */
+    .service {
+      width: 100%;
+      height: 120vh;
+      border-top: 5px solid rgb(167, 127, 20);
+      background-image: var(--abuzar3);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .services {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    .card {
+      text-align: center;
+      margin-top: 40px;
+      margin-right: 8px;
+      width: 202px;
+      height: 400px;
+      border: 1px solid white;
+      background-color: rgba(0, 0, 0, 0.669);
+    }
+
+    .card img {
+      border-bottom: 2px solid white;
+      background-position: center;
+      background-size: cover;
+      transition: all 0.5s ease-in-out;
+      overflow: hidden;
+    }
+
+    .card img:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .card p {
+      padding: 10px;
+    }
+
+    .card-img {
+      overflow: hidden;
+      width: 202px;
+      height: 202px;
+    }
+
+    .btn {
+      margin-top: 5px;
+      background-image: linear-gradient(45deg, rgb(167, 127, 20)50%, transparent 50%);
+      background-repeat: no-repeat;
+      background-size: 500px;
+      background-position: 0%;
+      padding: 10px;
+      border-radius: 5px;
+      width: 150px;
+    }
+
+    .btn a {
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-position: 100%;
+      background-color: rgba(154, 120, 26, 0.347);
+      transition: 1.5s;
+      border: 2px solid white;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgb(167, 127, 20), 0 0 30px rgb(167, 127, 20), 0 0 80px rgb(167, 127, 20);
+    }
+
+    .service h1 span {
+      font-size: 150px;
+      color: rgb(167, 127, 20);
+    }
+
+    .service h1 {
+      display: flex;
+      justify-content: center;
+      font-size: 50px;
+    }
+
+    /* --------------------------Contact Page----------------------------- */
+    .contactus {
+      border-top: 5px solid rgb(16 125 92);
+      width: 100%;
+      height: 100vh;
+      background-image: url(img/stars.jpg);
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      animation: slider 20s infinite linear;
+    }
+
+    @keyframes slider {
+      80% {
+        background: url(img/stars.jpg);
+      }
+    }
+
+    .form {
+      margin: 120px;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      width: 450px;
+      height: 380px;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%);
+      position: absolute;
+      border-radius: 10px;
+      padding: 125px;
+    }
+
+    .form h2 {
+      cursor: grab;
+      box-shadow: 0 0 10px gray, 0 0 40px gray, 0 0 80px gray;
+      width: 220px;
+      font-family: sans-serif;
+      text-align: center;
+      color: white;
+      font-size: 22px;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: black;
+      border-radius: 10px;
+      padding: 8px;
+    }
+
+    .form input {
+      color: white;
+      width: 240px;
+      height: 35px;
+      background: transparent;
+      border-bottom: 1px solid white;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      font-size: 15px;
+      letter-spacing: 1px;
+      margin-top: 30px;
+      font-family: sans-serif;
+    }
+
+    .form input:focus {
+      outline: none;
+    }
+
+    ::placeholder {
+      color: rgba(255, 255, 255, 0.699);
+      font-family: sans-serif;
+    }
+
+    .btnnn {
+      width: 240px;
+      height: 40px;
+      background-image: linear-gradient(30deg, black 50%, transparent 50%);
+      background-size: 600px;
+      background-repeat: no-repeat;
+      background-position: 0%;
+      border: 1px solid white;
+      margin-top: 50px;
+      color: white;
+      font-size: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.8s ease-in-out;
+    }
+
+    .btnnn a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .btnnn:hover {
+      background-position: 100%;
+      transition: 1.5s;
+      background-color: gray;
+      box-shadow: 0 0 10px gray, 0 0 40px gray, 0 0 80px gray;
+      color: black;
+    }
+
+    .contactus h1 {
+      font-size: 50px;
+    }
+
+    .contactus h1 span {
+      font-size: 100px;
+      color: rgb(36, 190, 144);
+    }
+
+    .btn1 {
+      cursor: pointer;
+    }
+
+    /* --------------------------------Footer---------------------------- */
+    footer {
+      border-top: 5px solid orangered;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      width: 100%;
+      height: 50vh;
+      background-color: black;
+    }
+
+    .icon a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .icon ion-icon {
+      color: white;
+      font-size: 20px;
+      margin-top: 5px;
+      padding-right: 10px;
+    }
+
+    ion-icon:hover {
+      color: orangered;
+    }
+
+    footer h1 span {
+      color: orangered;
+      font-size: 50px;
+    }
+
+    .support {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .support a {
+      text-decoration: none;
+      padding-top: 10px;
+    }
+
+    .support a:hover {
+      color: orangered;
+    }
+
+    .signup {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .signup input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.653);
+      outline: none;
+      width: 200px;
+      height: 30px;
+
+    }
+
+    .btn5 {
+      border-radius: 10px;
+      margin-top: 20px;
+      width: 100px;
+      height: 40px;
+      border: 1px solid #039788;
+      background-color: orangered;
+      cursor: pointer;
+      transition: 0.9s;
+    }
+
+    .btn5 a {
+      text-decoration: none;
+      font-family: serif;
+      font-size: 20px;
+    }
+
+    .btn5:hover {
+      border: 2px solid #039788;
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="contact" onclick="sticky()"><span id="message"></span></div>
+  <section class="container">
+    <div>
+      <nav>
+        <img src="img/applelogo.png" alt="No-Image" height="50px" width="50px">
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#Category">Categories</a></li>
+          <li><a href="#Services">Services</a></li>
+          <li><a href="#Contactus">Contact us</a></li>
+          <div class="Togglebutton">
+            <input type="checkbox" class="checkbox" id="chk">
+            <label class="label" for="chk">
+              <ion-icon name="moon-outline" class="ion"></ion-icon>
+              <ion-icon name="sunny-outline" class="ion"></ion-icon>
+              <div class="ball"></div>
+            </label>
+          </div>
+        </ul>
+      </nav>
+      <div class="content">
+        <h1><span>B</span>less <span>F</span>riday</h1>
+        <p>All new tools largest collection of 2022</p>
+        <button class="btn1"><a href="Card.html">Shop Now</a></button>
+      </div>
+    </div>
+  </section>
+  <!-- --------------------------Category Section--------------------------- -->
+  <section class="container2" id="Category">
+    <div class="content2">
+      <h1><span>C</span>ategories</h1>
+      <form class="formm">
+        <div class="flexx">
+          <select id="color" name="color">
+            <option value="#" selected disabled>Please select Brand</option>
+            <option value="Men's">Men's</option>
+            <option value="Girl's">Girl's</option>
+            <option value="Kid's">Kid's</option>
+          </select>
+          <span id="error"></span>
+        </div>
+        <div class="flexx">
+          <button type="submit" class="btnnn1">Submit</button>
+        </div>
+      </form>
+  </section>
+  <!-- ------------------------Service Provider---------------------------- -->
+  <section class="service" id="Services">
+    <h1><span>S</span>ervices</h1>
+
+    <div class="services">
+      <div class="card">
+        <div class="card-img">
+          <img src="img/user-1.png" alt="Reload" height="100%" width="100%">
+
+        </div>
+        <h2>Kate Perry</h2>
+        <p>Hi! My name is Kate Perry. I'm a Service Provider at this online store. Responsible for trouser & Shirts
+          stuff</p>
+        <button class="btn" onclick="contact1()"><a href="#">Contact</a></button>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/user-2.png" alt="Reload">
+        </div>
+        <h2>Edward</h2>
+        <p>Hi! My name is Edward. I'm a Service Provider at this e-commerce online store. Responsible for Shoes stuff
+        </p>
+        <button class="btn" onclick="contact()"><a href="#">Contact</a></button>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img src="img/user-3.png" alt="Reload">
+        </div>
+        <h2>Allen</h2>
+        <p>Hi! My name is Allen John's. I'm a Service Provider at this online store. Responsible for Watches stuff</p>
+        <button class="btn" onclick="contact2()"><a href="#">Contact</a></button>
+      </div>
+    </div>
+  </section>
+  <!-- ---------ContactUs----------------- -->
+  <section class="contactus" id="Contactus">
+    <h1><span>C</span>ontact us</h1>
+    <div class="form" id="form">
+      <form action="backened.php">
+        <h2>Contact Us !</h2>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <input type="text" id="text" name="textbox" placeholder="Write Your Message" required>
+        <button class="btnnn" id="button1" type="button" onclick="abuzar()">Submit Now</button>
+    </div>
+  </section>
+  <!-- ----------------footer------------------- -->
+  <footer>
+    <div class="icon">
+      <h1><span>W</span>eb <span>D</span>eveloper</h1>
+      <br>
+      <a href="https://www.facebook.com/abuzar.munir.545/" target="_blank"><ion-icon
+          name="logo-facebook"></ion-icon></a>
+      <a href="https://www.instagram.com/error_404__0_0__/" target="_blank"><ion-icon
+          name="logo-instagram"></ion-icon></a>
+      <a href="https://twitter.com/i/flow/login" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+      <a href="https://www.skype.com/en/" target="_blank"><ion-icon name="logo-skype"></ion-icon></a>
+      <a href="https://www.google.com/" target="_blank"><ion-icon name="logo-google"></ion-icon></a>
+    </div>
+    <div class="support">
+      <h1><span>S</span>upport</h1>
+      <a href="#Contactus">Contact Us</a>
+      <a href="https://en.wikipedia.org/wiki/FAQ" target="_blank">FAQ</a>
+      <a href="https://www.google.com/maps/place/Samanabad,+Faisalabad,+Punjab,+Pakistan/@31.3895822,73.0583756,15.2z/data=!4m5!3m4!1s0x39225d49afde6e87:0x59de94db4a123a7b!8m2!3d31.3871056!4d73.0677139"
+        target="_blank">Address</a>
+    </div>
+    <div class="signup">
+      <h1><ion-icon name="mail-outline" style="color: white;"></ion-icon> <span>S</span>tay upto date</h1>
+      <input type="email" id="email2" placeholder="Enter your email-address">
+      <button class="btn5" onclick="signup()"><a href="#">Sign up</a></button>
+    </div>
+  </footer>
+
+  <script>
+    //  <!-- ----------------------------For Toggle Button--------------------------------- -->
+    var chk = document.getElementById('chk');
+
+    chk.addEventListener('change', () => {
+      // <!----The classList. toggle() method supports adding and removing CSS classes whether they exist or not
+      document.body.classList.toggle('dark');
+    });
+    //  <!-- ----------------------------Service Contact--------------------------------- -->
+    function contact() {
+      var name = window.prompt("What is your name...")
+      var eml = window.prompt("Write your email ...")
+      var help = window.prompt("Hi " + name + " My name is Edward Phillips, How Can i help You.. ");
+      alert(" Your request " + help + " is processing we will contact you soon " + eml);
+    }
+    //  <!-- ----------------------------Service Contact--------------------------------- -->
+    function contact1() {
+      var name = window.prompt("What is your name...")
+      var eml = window.prompt("Write your email ...")
+      var help = window.prompt("Hi " + name + " ...! My name is Kate Perry, How Can i help You.. ");
+      alert(" Your request " + help + " is processing we will contact you soon at your email " + eml);
+    }
+    //  <!-- ----------------------------Service Contact--------------------------------- -->
+    function contact2() {
+      var name = window.prompt("What is your name...")
+      var eml = window.prompt("Write your email ...")
+      var help = window.prompt("Hi " + name + " ...! My name is Allen, How Can i help You.. ");
+      alert(" Your request " + help + " is processing we will contact you soon at your email " + eml);
+    }
+    //  <!-- ----------------------------Sticky function--------------------------------- -->
+    function sticky() {
+      var contact = window.prompt("How can i help you");
+      alert("Your mesage is in queue we will respond you soon at your email");
+      var emll = window.prompt("Please enter your email");
+      alert("We will contact you soon.Thanks for contacting us ");
+    }
+    //  <!-- ----------------------------Contact Us Form--------------------------------- -->
+    var nam = document.getElementById("email");
+    var text = document.getElementById("text");
+    function abuzar() {
+      if (nam.value == "", text.value == "") {
+        alert("Please input before submit");
+      }
+      else {
+        document.getElementById("form").innerHTML = "Submitted Successfully!";
+      }
+    }
+    //  <!-- ----------------------------Footer Sign Up Button--------------------------------- -->
+    var email = document.getElementById("email2")
+    function signup() {
+      if (email.value == "") {
+        alert("Please enter your email first before sign-up")
+      }
+      else {
+        alert("Sign-up Successfully")
+      }
+    }
+    //  <!-- ----------------------------Select Option Validation--------------------------------- -->
+
+    const form = document.querySelector("form");
+    const select = document.querySelector("#color");
+    const error = document.querySelector("#error");
+    var innerr = document.querySelector("#inner");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (select.value === "") {
+        error.textContent = "Please select a color";
+        error.style.display = "block";
+      } else {
+        error.style.display = "none";
+        console.log("Selected Brand: " + select.value);
+      }
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        background-color: black;
+        color: white;
+      }
+      .box {
+        height: 100px;
+        width: 100px;
+        background-color: rgba(255, 0, 0, 0.489);
+        display: flex;
+        margin: 120px;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid white;
+        color: white;
+      }
+      .box:hover {
+        animation: rotate 0.2s infinite linear;
+        cursor: pointer;
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .content {
+        font-size: 80px;
+      }
+      .flower {
+        height: 100px;
+        width: 100px;
+        background-color: rgba(255, 0, 0, 0.489);
+        display: flex;
+        margin: 120px;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid white;
+        color: white;
+      }
+      .flower:hover {
+        animation: rotate 0.2s infinite linear;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">O</div>
+    </div>
+    <div class="content">Zouraiz Janeman</div>
+    <div class="flower">O</div>
+  </body>
+</html>

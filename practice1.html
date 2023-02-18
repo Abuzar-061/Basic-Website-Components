@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #888;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.594), rgba(0, 0, 0, 0.626)), url(img/tree.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-container {
+            width: 50%;
+            background: rgba(21, 21, 160, 0.683);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            border-radius: 50px;
+        }
+
+        #searchButton {
+            border-radius: 60px;
+            background: rgba(21, 21, 160, 0.683);
+            border: none;
+            color: white;
+        }
+
+        .search-decoration {
+            width: 100%;
+            padding: 20px;
+            justify-content: space-between;
+        }
+
+        form {
+            display: flex;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #ccc;
+            background: transparent;
+            /* border: 1px solid #ccc; */
+            border: none;
+            outline: none;
+        }
+
+        button[type="submit"] {
+            width: 70px;
+            padding: 10px;
+            background-color: #ddd;
+            color: #000;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-left: none;
+            cursor: pointer;
+        }
+
+        #suggestions {
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-container">
+            <form class="search-decoration">
+                <input type="text" placeholder="Search..." id="searchBox">
+                <!-- <button type="submit" id="searchButton"><ion-icon name="search-outline"></ion-icon></button> -->
+            </form>
+
+        </div>
+        <div id="suggestions">
+            <label for="names">Abuzar</label>
+            <label for="names">Muneer</label>
+            <label for="names">Ali</label>
+            <label for="names">Sadan</label>
+            <label for="names">Moiz</label>
+            <label for="names">Bilal</label>
+            <label for="names">Hamza</label>
+        </div>
+    </div>
+    <script>
+        const searchBox = document.getElementById("searchBox");
+        const suggestions = document.getElementById("suggestions");
+
+        searchBox.addEventListener("input", function () {
+            const searchTerm = this.value;
+
+            // Add logic to get suggestions based on searchTerm
+            // Example: suggestions from a list of names
+            const names = ["Abuzar", "Muneer", "Ali", "Sadan", "Moiz", "Bilal", "Hamza"];
+            const filteredNames = names.filter(name => name.toLowerCase().includes(searchTerm.toLowerCase()));
+
+            let suggestionsHTML = "";
+            for (const name of filteredNames) {
+                suggestionsHTML += `<div>${name}</div>`;
+            }
+            suggestions.innerHTML = suggestionsHTML;
+        });
+
+    </script>
+</body>
+
+</html>

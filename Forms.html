@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forms</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: orange;
+    }
+
+    .txt {
+      width: 100%;
+      height: 100vh;
+      justify-content: center;
+      display: flex;
+      text-align: center;
+      background: url(img/sky-3343302_1280.jpg);
+    }
+
+    .form {
+      padding: 5px;
+      background-color: black;
+      width: 300px;
+      color: white;
+      border-radius: 30px;
+    }
+
+    .form h1 {
+      color: orange;
+    }
+
+    input {
+      outline: none;
+      border: none;
+      background: transparent;
+      border-bottom: 1px solid orangered;
+      margin: 15px;
+      padding: 5px;
+      color: orange;
+    }
+
+    .submit-section {
+      margin-top: 25px;
+    }
+
+    .btn {
+      width: 100px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid orangered;
+      background-color: orange;
+      cursor: pointer;
+      color: black;
+      font-family: sans-serif;
+    }
+
+    .btn:hover {
+      color: white;
+      background-color: rgba(255, 166, 0, 0.637);
+      border: 2px solid white;
+    }
+
+    .color {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .color select,
+    option {
+      color: black;
+    }
+
+    hr {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="txt">
+    <!-- Forms -->
+    <form action="Backened.php" class="form" method="post" name="myForm">
+      <h1>Form</h1>
+      <hr />
+      <label for="name">Name</label>
+      <div>
+        <input type="text" name="myName" id="name" placeholder="Type Your Name" required />
+      </div>
+      <label for="email">Email</label>
+      <div>
+        <input type="email" name="my Email" id="email" placeholder="Type Your Email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+      </div>
+      <label for="textarea">Write About Yourself:</label>
+      <div>
+        <textarea name="text" id="textarea" cols="20" rows="4" placeholder="Your message"></textarea>
+      </div>
+      <label for="Today Date">Date</label>
+      <div>
+        <input type="date" name="Date" id="Today Date" />
+      </div>
+      <div>
+        My Gender: Male<input type="radio" name="myGender" />FeMale<input type="radio" name="myGender" />
+      </div>
+      <div class="submit-section">
+        <button class="btn" onclick="validateForm()">Submit Now</button>
+        <button class="btn">Clear Now</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    function validateForm() {
+      let x = document.forms["myForm"]["myName"].value;
+      if (x == "") {
+        alert("Name must be filled out");
+        return false;
+      }
+    }
+    function clearr() {
+
+    }
+  </script>
+</body>
+
+</html>

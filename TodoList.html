@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO | List</title>
+    <link rel="shortcut icon" href="img/todolist.png" type="image/x-icon">
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.856), rgba(0, 0, 0, 0.705)), url(img/stars.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 20px;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        .todolist {
+            background-color: rgba(128, 128, 128, 0.751);
+            width: 50%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            background: transparent;
+            border: none;
+            border-radius: 50px;
+            border-right: none;
+            width: 440px;
+            height: 30px;
+            outline: none;
+            color: #333;
+        }
+
+        ::placeholder {
+            color: white;
+            padding-left: 10px;
+        }
+
+        .btn1 {
+            display: flex;
+            justify-content: center;
+            width: 50px;
+            height: 40px;
+            border-radius: 50px;
+            align-items: center;
+            border: none;
+            background: rgba(128, 128, 128, 0.836);
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+            transition: 0.8s ease-in-out;
+        }
+
+        .btn1:hover {
+            background-color: rgb(87, 1, 1);
+        }
+
+        .todocontainer div {
+            color: white;
+        }
+
+        #task-list {
+            margin-top: 10px;
+            border: 1px solid white;
+            width: 50%;
+            justify-content: center;
+            color: #333;
+            list-style: none;
+            height: 200px;
+            overflow: scroll;
+        }
+
+        #task-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .task {
+            background-color: #333;
+            color: aliceblue;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .task span {
+            float: right;
+            cursor: pointer;
+        }
+
+
+        #task-list li {
+            list-style: none;
+        }
+
+        .task span:hover {
+            color: red;
+        }
+
+        hr {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="img/todolist.png" alt="Reload" height="100px" width="250px">
+        </div>
+
+
+
+
+
+        <div class="todolist">
+            <div class="input">
+                <!-- Useful Things -->
+                <input type="text" placeholder="Enter task" id="task">
+            </div>
+            <!-- Useful Things -->
+            <button class="btn1" id="addtodo" onclick="addTask()">+</button>
+        </div>
+        <!-- Useful Things -->
+        <div id="task-list">
+            <h2>All Task</h2>
+            <hr>
+
+        </div>
+    </div>
+    <script>
+        // ------------Variable Declare-------------
+        var task = document.getElementById("task").value;
+        var list = document.getElementById("task-list");
+        var addtodo = document.getElementById("addtodo");
+
+
+        // ------------Function Starts From Here -----------
+        function addTask() {
+            // Get input value
+            var task = document.getElementById("task").value;
+
+            // --------------If Input Empty Then Message Show------------------
+            if (task == "") {
+                swal("Make sure input isn't empty");
+            }
+            else {
+
+                // Create a new li element
+                var li = document.createElement("li");
+                li.className = "task";
+
+                // Create a new span element
+                var span = document.createElement("span");
+                span.innerHTML = "X";
+                span.onclick = removeTask;
+
+                // Add input value and span to li
+                li.appendChild(document.createTextNode(task + " "));
+                li.appendChild(span);
+
+                // Add li to task list
+                document.getElementById("task-list").appendChild(li);
+
+                // Clear input
+                document.getElementById("task").value = "";
+            }
+        }
+        // Remove Task
+        function removeTask(e) {
+            var task = e.target.parentElement;
+            task.remove();
+        }
+
+        // --------------Enter Add Task Script------------------
+        document.getElementById("task").addEventListener("keyup", function (event) {
+            if (event.key === "Enter") {
+                addTask();
+            }
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

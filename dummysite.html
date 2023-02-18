@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Web Page Design</title>
+   <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      .main {
+         width: 100%;
+         background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(img/tree.jpg);
+         background-position: center;
+         background-size: cover;
+      }
+
+      .navbar {
+         width: 100%;
+         height: 110px;
+         border-bottom: 1px solid white;
+         display: flex;
+      }
+
+      .logo {
+         width: 200px;
+         color: orange;
+         font-size: 30px;
+         font-family: Arial, Helvetica, sans-serif;
+         margin-bottom: 30px;
+         margin-top: 30px;
+         float: left;
+         position: sticky;
+      }
+
+      .logo:hover {
+         cursor: grab;
+         text-shadow: 0 0 10px orangered, 0 0 40px orangered, 0 0 80px orangered;
+      }
+
+      .menu {
+         width: 400px;
+         float: left;
+         height: 70px;
+         padding-top: 10px;
+      }
+
+      ul {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      ul li {
+         list-style: none;
+         margin-left: 32px;
+         margin-top: 37px;
+         font-size: 16px;
+      }
+
+      ul li a {
+         color: white;
+         text-decoration: none;
+         font-family: Arial;
+         transition: 0.4s ease-in-out;
+
+      }
+
+      ul li a:hover {
+         color: orange;
+         text-shadow: 0 0 10px orangered, 0 0 40px orangered, 0 0 80px orangered;
+         font-size: 20px;
+      }
+
+      .search {
+         width: 330px;
+         float: left;
+         margin-left: 270px;
+      }
+
+      .srch {
+         font-family: Arial, Helvetica, sans-serif;
+         width: 200px;
+         height: 40px;
+         background: transparent;
+         border: 2px solid orange;
+         margin-top: 40px;
+         color: white;
+         border-right: none;
+         float: left;
+         padding: 10px;
+         border-bottom-left-radius: 5px;
+         border-top-left-radius: 5px;
+      }
+
+      .btn {
+         text-decoration: none;
+         width: 100px;
+         height: 40px;
+         background: orange;
+         border: 2px solid orange;
+         margin-top: 40px;
+         color: white;
+         font-size: 15px;
+         border-bottom-right-radius: 5px;
+         border-bottom-right-radius: 5px;
+      }
+
+      .btn:hover {
+         background-color: orangered;
+         box-shadow: 0 0 10px orangered, 0 0 40px orangered, 0 0 80px orangered;
+         color: orange;
+         cursor: pointer;
+      }
+
+      .btn :focus {
+         outline: none;
+      }
+
+      .srch:focus {
+         outline: none;
+      }
+
+      .content {
+         height: auto;
+         text-align: center;
+         color: white;
+         position: relative;
+      }
+
+      .content para {
+         padding-left: 20px;
+         padding-bottom: 30px;
+         font-family: Arial;
+         letter-spacing: 1.2px;
+         line-height: 30px;
+         margin-top: 30px;
+      }
+
+      .content h1 {
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 50px;
+         padding-left: 20px;
+         letter-spacing: 2px;
+         margin-top: 9%;
+      }
+
+      .btnn {
+         width: 160px;
+         height: 40px;
+         background: orange;
+         border: none;
+         margin-top: 30px;
+         margin-bottom: 10px;
+         margin-left: 20px;
+         font-size: 18px;
+         border-radius: 10px;
+         cursor: pointer;
+         transition: 0.4 ease;
+      }
+
+      .content .btnn a {
+         text-decoration: none;
+         color: black;
+         transition: 0.3 ease;
+         color: white;
+      }
+
+      .btnn:hover {
+         color: white;
+         background: orange;
+         box-shadow: 0 0 10px orange, 0 0 40px orange, 0 0 80px orange;
+      }
+
+      .content span {
+         color: orange;
+         font-size: 60px;
+      }
+
+      .form {
+         width: 250px;
+         height: 380px;
+         background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%);
+         position: absolute;
+         top: -27px;
+         left: 870px;
+         border-radius: 10px;
+         padding: 25px;
+
+      }
+
+      .form h2 {
+         cursor: grab;
+         box-shadow: 0 0 10px orangered, 0 0 40px orangered, 0 0 80px orangered;
+         width: 220px;
+         font-family: sans-serif;
+         text-align: center;
+         color: orange;
+         font-size: 22px;
+         font-family: 'Times New Roman', Times, serif;
+         background-color: black;
+         border-radius: 10px;
+         margin: 2px;
+         padding: 8px;
+      }
+
+      .form input {
+         color: white;
+         width: 240px;
+         height: 35px;
+         background: transparent;
+         border-bottom: 1px solid orange;
+         border-top: none;
+         border-right: none;
+         border-left: none;
+         font-size: 15px;
+         letter-spacing: 1px;
+         margin-top: 30px;
+         font-family: sans-serif;
+      }
+
+      .form input:focus {
+         outline: none;
+      }
+
+      ::placeholder {
+         color: white;
+         font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .link {
+         margin-top: 20px;
+         text-align: center;
+         padding-top: 20px;
+         font-size: 15px;
+      }
+
+      .link a {
+
+         color: orangered;
+      }
+
+      .href {
+         margin-top: 10px;
+         text-align: center;
+         color: white;
+      }
+
+      .href:hover{
+         text-shadow: 0 0 10px orangered, 0 0 40px orangered, 0 0 80px orangered;
+      }
+
+      .liw {
+         color: white;
+         text-align: center;
+         margin-top: 4px;
+      }
+
+      .icon a {
+         text-decoration: none;
+         color: white;
+      }
+
+      .icon ion-icon {
+         color: white;
+         font-size: 20px;
+         margin: 2px;
+         padding-left: 10px;
+         padding-top: 5px;
+      }
+
+      ion-icon:hover{
+         color: orangered;
+      }
+      .btnnn {
+         width: 240px;
+         height: 40px;
+         background: orange;
+         border: 1px solid white;
+         margin-top: 30px;
+         color: white;
+         font-size: 15px;
+         border-radius: 10px;
+         cursor: pointer;
+      }
+
+      .btnnn a {
+         text-decoration: none;
+         color: white;
+      }
+
+      .btnnn:hover {
+         background-color: orangered;
+         box-shadow: 0 0 10px orangered, 0 0 40px orangered, 0 0 80px orangered;
+         color: orange;
+      }
+      .section2{
+         margin: 0;
+         padding: 0;
+         width: 100%;
+         height: 790px;
+         background: url(img/mall.jpg);
+         background-position: center;
+         background-size: cover;
+         background-repeat: no-repeat;
+      }
+      footer{
+         position: sticky;
+         background-color: black;
+         text-align: center;
+         border-top: 1px solid white;
+         height: 30px;
+         width: 100%;
+
+      }
+      footer a{
+         font-family: 'Courier New', Courier, monospace;
+         margin-top: 4px;
+         text-decoration: none;
+         color: white;
+
+      }
+      .content2{
+         color: white;
+         text-align: center;
+      }
+      .content2 h1{
+         display: inline-block;
+         padding-top: 30px;
+         margin: 30px;
+      }
+      .bkvideo{
+         right: 0;
+         bottom: 0;
+         position: absolute;
+      }
+
+   </style>
+</head>
+
+<body>
+   <div class="main">
+      <div class="navbar">
+         <div class="icon">
+            <h1 class="logo">Online Shop</h1>
+         </div>
+         <div class="menu">
+            <ul>
+               <li><a href="#">Home</a></li>
+               <li><a href="#">Products</a></li>
+               <li><a href="#">About</a></li>
+               <li><a href="#">Contact</a></li>
+            </ul>
+         </div>
+         <div class="search">
+            <input class="srch" type="search" name="search" placeholder="Search">
+            <a href="#"><button class="btn">Search</button></a>
+         </div>
+      </div>
+      <div class="content">
+         <h1>Online Sell & <br> <span> Purchase </span> <br> In Pakistan </h1>
+         <p class="para">As a digital marketer, you'll need to: create and upload copy and images for the organisation's
+            website. <br> write and dispatch email marketing campaigns. provide accurate reports and analysis to clients
+            <br> and company management to demonstrate effective return on investment (ROI) </p>
+         <button class="btnn"> <a href="#">Shop Now</a> </button>
+         <!-- <div class="form">
+            <h2>Login Here !</h2>
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="password" name="password" placeholder="Enter your password" required>
+            <button class="btnnn"> <a href="#">Login</a> </button>
+            <p class="link">Don't have an account ? &nbsp;
+               <a class="href" href="#">Sign up </a>
+               <br>
+               <br>
+               Or
+            </p>
+            <p class="liw">Login with</p>
+            <div class="icon">
+               <a href="#">
+                  <ion-icon name="logo-facebook"></ion-icon>
+               </a>
+               <a href="#">
+                  <ion-icon name="logo-instagram"></ion-icon>
+               </a>
+               <a href="#">
+                  <ion-icon name="logo-twitter"></ion-icon>
+               </a>
+               <a href="#">
+                  <ion-icon name="logo-skype"></ion-icon>
+               </a>
+            <a href="#"> 
+                  <ion-icon name="logo-google"></ion-icon>
+               </a>
+            </div>
+         </div> -->
+      </div>
+   </div>
+   <section class="section2">
+      <div class="container-2">
+         <div class="content2">
+            <h1>Products</h1>
+         </div>
+      </div>
+   </section>
+   <footer>
+   <p><a href="#"> <b>Contact us at: </b> abuzarmunir@gmail.com</a></p>
+   </footer>
+</body>
+
+</html>

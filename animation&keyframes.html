@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation&Keyframes</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        height: 100vh;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        background-color: black;
+      }
+      .box {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        background-color: greenyellow;
+        width: 250px;
+        height: 250px;
+        position: relative;
+        /* animation: Abuzar 2s ease-in infinite; */
+        animation-name: Abuzar;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        /* animation-timing-function: ease-in; */
+        /* animation-delay: 1s; */
+        /* animation-direction: reverse; */
+      }
+      @keyframes Abuzar {
+        /* from{
+                width: 100px;
+            }
+            to{
+                width: 100%;
+            }
+            0%{
+                background-color: red;
+            }
+            25%{
+                background-color:cyan;
+            }
+            80%{
+                background-color: pink;
+            }
+            100%{
+                background-color: black;
+            } */
+        0% {
+          left: -325px;
+        }
+        100% {
+          left: 525px;
+        }
+      }
+      .box h1 {
+        font-family: sans-serif;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h1>Abuzar</h1>
+      </div>
+    </div>
+  </body>
+</html>

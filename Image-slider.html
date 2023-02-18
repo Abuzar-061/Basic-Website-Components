@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img | Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #image-slider {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .slider-image {
+            width: 50%;
+            height: 50%;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="image-slider">
+        <img src="img/tree.jpg" class="slider-image">
+        <img src="img/e-gamingg.jpg" class="slider-image">
+        <img src="img/forest.jpg" class="slider-image">
+    </div>
+
+    <script>
+        let imageIndex = 0;
+        const images = document.getElementsByClassName('slider-image');
+
+        setInterval(() => {
+            images[imageIndex].style.display = 'none';
+            imageIndex = (imageIndex + 1) % images.length;
+            images[imageIndex].style.display = 'block';
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

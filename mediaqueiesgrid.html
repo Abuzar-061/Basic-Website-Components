@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS Grid + Media Queries</title>
+  </head>
+  <style>
+    .container {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-areas:
+        "navbar navbar navbar navbar"
+        "section section section aside"
+        "footer footer footer footer ";
+    }
+
+    @media only screen and (max-width: 300px) {
+      body {
+        background-color: red;
+      }
+
+      .container {
+        grid-template-areas:
+          "navbar navbar navbar navbar"
+          "section section section section"
+          "aside aside aside aside"
+          "footer footer footer footer ";
+      }
+
+      aside {
+        display: none;
+      }
+
+      span {
+        display: block;
+        text-align: center;
+      }
+    }
+
+    @media only screen and (min-width: 300px) and (max-width: 500px) {
+      body {
+        background-color: blue;
+      }
+
+      .container {
+        grid-template-areas:
+          "navbar navbar navbar navbar"
+          "section section section section"
+          "aside aside aside aside"
+          "footer footer footer footer ";
+      }
+
+      aside {
+        display: none;
+      }
+
+      span {
+        display: block;
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 500px) and (max-width: 800px) {
+      body {
+        background-color: yellow;
+      }
+
+      .container {
+        grid-template-areas:
+          "navbar navbar navbar navbar"
+          "section section section section"
+          "aside aside aside aside"
+          "footer footer footer footer ";
+      }
+
+      span {
+        display: block;
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 800px) {
+      body {
+        background-color: green;
+      }
+    }
+
+    .bdr {
+      border: 2px solid black;
+      padding: 10px 23px;
+      background-color: wheat;
+    }
+
+    nav {
+      grid-area: navbar;
+    }
+
+    section {
+      grid-area: section;
+    }
+
+    aside {
+      grid-area: aside;
+    }
+
+    footer {
+      grid-area: footer;
+      text-align: center;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <nav class="bdr">
+        <span>Home</span>
+        <span>About</span>
+        <span>Services</span>
+        <span>Contact</span>
+      </nav>
+      <section class="bdr">
+        <h2>Abuzar</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque
+          nemo cupiditate distinctio et expedita. Delectus quaerat accusamus
+          inventore tenetur error quam minus, provident fugit repellat
+          necessitatibus? Architecto itaque quidem sequi blanditiis, facere
+          accusantium hic.lorem122 Lorem ipsum dolor sit amet consectetur,
+          adipisicing elit. Eligendi dignissimos ut rerum aut. Fuga delectus
+          suscipit debitis libero. Itaque, ipsum dignissimos consequatur
+          repellat distinctio enim dolorem, facilis esse dolorum illum earum
+          aliquid numquam blanditiis ipsam reiciendis iure nobis quo cum maiores
+          aperiam pariatur. Quas aliquam, quae non rerum, architecto eligendi
+          blanditiis officia placeat dolor soluta explicabo. Voluptatem tenetur
+          perspiciatis neque quidem ducimus velit id explicabo, illo magni quis
+          voluptatum. Tempora quod, dicta illum ratione quo at dolores
+          cupiditate aperiam laboriosam amet sequi quaerat similique incidunt
+          eius deleniti deserunt accusamus eligendi nemo est veritatis fugiat
+          ducimus! Modi ut vel et nihil asperiores mollitia obcaecati, neque
+          accusantium corrupti, quisquam voluptatem rem? Possimus tempore et
+          fugit cumque culpa aliquam doloremque odio hic, cum, minima nostrum!
+        </p>
+      </section>
+      <aside class="bdr">
+        <h1>Abuzar</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+          error ab enim totam nihil dolore perferendis eaque aperiam repudiandae
+          laboriosam non repellat, aspernatur, tempore autem rerum!
+          Reprehenderit assumenda nobis odio neque? Sed labore veniam itaque
+          doloribus iste, dolorem repellendus quisquam natus dolores amet fugit
+          et excepturi eveniet dolor corrupti dignissimos explicabo mollitia
+          asperiores sit. Unde cumque inventore voluptatum distinctio commodi ad
+          voluptatibus hic labore beatae facere rerum quaerat fugiat nihil odit
+          cupiditate exercitationem doloremque voluptates veniam recusandae,
+          blanditiis consequuntur. Possimus veritatis veniam suscipit officia
+          distinctio earum porro, ut necessitatibus ducimus optio? Molestias
+          debitis porro totam alias dignissimos repudiandae odio architecto
+          quisquam quos, eveniet pariatur tenetur odit? Perspiciatis recusandae
+          ullam sint quod aliquid, odio cumque amet, esse, explicabo aliquam
+          dolorum fugiat modi eligendi nostrum. Veritatis aliquam minima maiores
+          repudiandae ea, autem voluptas expedita exercitationem? Obcaecati
+          deleniti accusantium, impedit magnam laborum ipsum debitis quas. Quos
+          consequatur nam sapiente adipisci iure quis quae qui deleniti odit
+          ipsa aliquam eius quas et, error rem obcaecati officia fugiat in
+          commodi. Nobis laborum assumenda maiores. Dolore earum quibusdam
+          architecto voluptates fugiat eligendi cupiditate, consectetur fugit
+          officia vitae assumenda voluptatibus inventore esse molestias
+          necessitatibus. Velit nemo sunt sed in impedit porro tempore delectus,
+          natus non quam dolorem cum facere ullam tempora laborum recusandae
+          vel, excepturi vitae deserunt? Maxime id possimus recusandae ab
+          repudiandae doloremque harum inventore dolorum quo? Cupiditate unde
+          quisquam ab nam, sint inventore ad aperiam, aut excepturi nemo animi
+          hic ratione esse blanditiis non optio adipisci odio quam facere labore
+          quo atque consectetur ipsa eum! Accusamus, corrupti enim, iste
+          quibusdam error amet quidem consequatur culpa voluptatem labore iusto
+          aliquid nostrum accusantium dolorum, saepe perferendis explicabo totam
+          unde voluptatibus omnis excepturi aspernatur impedit tenetur magnam.
+          Est, odio et nobis iste amet pariatur tempore nemo voluptate.
+          Voluptate suscipit ad eligendi cum impedit nulla in voluptatum tempore
+          molestias!
+        </p>
+      </aside>
+    </div>
+    <footer class="bdr">Copyright 2020 @abuzarmunir76@gmail.com</footer>
+  </body>
+</html>

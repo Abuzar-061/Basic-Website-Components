@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are You Dumb?</title>
+    <link rel="shortcut icon" href="img/Lawyer.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 230px;
+            height: 140px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgb(111, 104, 104);
+            border-radius: 10px;
+        }
+
+        .btns {
+            display: flex;
+            margin: 10px;
+        }
+
+        .btn {
+            margin: 5px;
+            width: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box">
+            <div class="content" id="content">Are You Dumb?</div>
+            <div class="btns">
+                <button id="btn1" class="btn" onclick="knew()">Yes</button>
+                <button id="btn2" class="btn">No</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var knewit = document.getElementById("btn1");
+        var lie = document.getElementById("btn2");
+        var box = document.getElementById("box");
+
+
+
+        function knew() {
+            box.innerHTML = "I Knew it Idiot.. >3";
+        }
+
+
+        let clickCount = 0;
+        lie.addEventListener("click", function () {
+            clickCount++;
+            if (clickCount === 1) {
+                lie.style.transform = "translateX(50px)";
+            } else if (clickCount === 2) {
+                lie.style.transform = "translateY(50px)";
+            } else if (clickCount === 3) {
+                lie.style.transform = "translateX(50px)";
+            } else if (clickCount === 4) {
+                lie.style.transform = "translateY(50px)";
+            } else if (clickCount === 5) {
+                lie.style.transform = "translateX(50px)";
+            } else if (clickCount === 6) {
+                lie.style.transform = "translateY(-50px)";
+            } else if (clickCount === 7) {
+                lie.style.transform = "translateX(50px)";
+            } else if (clickCount === 8) {
+                lie.style.transform = "translateY(50px)";
+            } else if (clickCount === 9) {
+                lie.style.transform = "translateX(50px)";
+            } else if (clickCount === 10) {
+                lie.style.transform = "translateY(-50px)";
+            } else if (clickCount === 11) {
+                lie.style.transform = "translateX(50px)";
+            } else if (clickCount === 12) {
+                lie.style.transform = "translateY(-50px)";
+            } else if (clickCount === 13) {
+                lie.style.transform = "translateX(50px)";
+            } else if (clickCount === 14) {
+                lie.style.transform = "translateY(-50px)";
+            } else if (clickCount === 15) {
+                lie.style.transform = "translateX(50px)";
+            } else if (clickCount === 16) {
+                lie.style.transform = "translateY(50px)";
+            } else if (clickCount === 17) {
+                lie.style.transform = "translateX(50px)";
+            } else if (clickCount === 18) {
+                lie.style.transform = "translateY(-50px)";
+            } else if (clickCount === 19) {
+                lie.style.transform = "translateX(50px)";
+            } else if (clickCount === 20) {
+                lie.style.transform = "translateY(50px)";
+            } else if (clickCount === 21) {
+                lie.style.transform = "translateX(50px)";
+            } else if (clickCount === 22) {
+                lie.style.transform = "translateY(-50px)";
+            } else if (clickCount === 23) {
+                box.innerHTML = " Bss kr Bhai ... >3";
+            }
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local | Storage </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        input {
+            border: 1px solid white;
+            padding: 10px;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        ul {
+            margin-top: 10px;
+        }
+
+        .btn {
+            width: 240px;
+            height: 40px;
+            background-image: linear-gradient(30deg, black 50%, transparent 50%);
+            background-size: 600px;
+            background-repeat: no-repeat;
+            background-position: 0%;
+            border: 1px solid white;
+            margin-top: 50px;
+            color: white;
+            font-size: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.8s ease-in-out;
+        }
+
+        .btn:hover {
+            background-position: 100%;
+            transition: 1.5s;
+            background-color: gray;
+            box-shadow: 0 0 10px gray, 0 0 40px gray, 0 0 80px gray;
+            color: black;
+        }
+
+        #list {
+            border: 1px solid white;
+            width: 50%;
+            height: 300px;
+            overflow: scroll;
+        }
+
+        #list::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Enter Task</h1>
+    <input type="text" id="task">
+    <ul id="list">
+        <h1>ALL Tasks</h1>
+        <hr>
+    </ul>
+    <button class="btn" id="button1">Remove Task</button>
+
+
+
+    <script>
+        var input = document.getElementById("task");
+        function addTask() {
+            const task = document.getElementById("task").value;
+            const list = document.getElementById("list");
+            const item = document.createElement("li");
+            item.innerHTML = task;
+            list.appendChild(item);
+
+            // Save the task to local storage
+            var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+            tasks.push(task);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+
+        }
+
+        // Load the saved tasks when the page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+            const list = document.getElementById("list");
+            for (let task of tasks) {
+                const item = document.createElement("li");
+                item.innerHTML = task;
+                list.appendChild(item);
+            }
+        });
+
+        document.getElementById("task").addEventListener("keyup", function (event) {
+            if (event.key === "Enter") {
+                addTask();
+                document.getElementById("task").value = "";
+            }
+        });
+
+
+        //Remove Local Storage Saved Tasks
+        var removee = document.getElementById("button1");
+        removee.addEventListener('click', () => {
+            localStorage.removeItem("tasks");
+            alert("Now reload the page the saved tasks on local storage is Removed");
+        })
+    </script>
+</body>
+
+</html>

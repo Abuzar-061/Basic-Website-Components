@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 200px;
+            height: 500px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 40%;
+        }
+
+        .card h3 {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .card p {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #ffc107;
+            margin-top: 10px;
+        }
+
+        .card label {
+            font-size: 1em;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .card input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+            width: 50%;
+        }
+
+        .card button {
+            background-color: #ffc107;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <form id="card-form">
+        <div class="card">
+            <img src="img/product-1.jpg" alt="Product" height="50px">
+            <h3>Product Name</h3>
+            <p>$24.99</p>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+            <div id="quantity-error" class="error"></div>
+            <button type="submit" onclick="return validateCard()">Add to Cart</button>
+        </div>
+    </form>
+
+    <script>
+        function validateCard() {
+            var quantity = document.getElementById("quantity").value;
+            var error = document.getElementById("quantity-error");
+
+            if (quantity < 1 || quantity > 10) {
+                error.innerHTML = "Please enter a quantity between 1 and 10.";
+                return false;
+            } else {
+                error.innerHTML = "";
+                return true;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

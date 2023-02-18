@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll-behaviour</title>
+  <style>
+    body {
+      width: 99%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      background-color: khaki;
+    }
+
+    html::-webkit-scrollbar {
+      width: 10px;
+      scroll-behavior: smooth;
+      /* display: none; */
+    }
+
+    html::-webkit-scrollbar-track {
+      /* display: none; */
+      background-color: black;
+    }
+
+    html::-webkit-scrollbar-thumb {
+      border-radius: 30px;
+      background-color: khaki;
+    }
+
+    .container {
+      height: 140px;
+      width: 178px;
+      font-family: "Courier New", Courier, monospace;
+      background-color: aquamarine;
+      overflow: scroll;
+    }
+
+    .container3 {
+      height: 266px;
+      padding-top: 70px;
+    }
+
+    .text {
+      display: flex;
+      justify-content: center;
+    }
+
+    .box {
+      display: inline-block;
+      border: 2px solid blue;
+      width: 150px;
+      height: 150px;
+      margin: 2px;
+      padding: 3px;
+      color: white;
+    }
+
+    #box1 {
+      /* position:absolute; */
+      background-color: red;
+    }
+
+    #box2 {
+      /* position: fixed; */
+      background-color: blue;
+    }
+
+    #box3 {
+      background-color: black;
+      /* position: absolute; */
+      position: relative;
+      /* position fixed can fix the position of box 3 if you scroll it is fixed */
+      /* position: fixed; */
+      /* position: sticky; */
+      top: 120px;
+      /* left: 34px; */
+    }
+
+    #box4 {
+      /* position: sticky; */
+      background-color: brown;
+    }
+
+    .text {
+      color: brown;
+    }
+
+    p:first-child {
+      color: red;
+      border: 2px solid blue;
+    }
+
+    .lab2:first-line {
+      color: red;
+    }
+
+    .lab2::first-letter {
+      font-size: larger;
+      font-weight: bold;
+      font-size: 40px;
+    }
+
+    .lab2 {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>overflow:scroll</h1>
+  <div class="container">
+    <p class="error">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />Delectus
+      repellendus beatae culpa? Optio, nostrum placeat.
+    </p>
+  </div>
+  <h1 class="text">Position</h1>
+  <div class="container3">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+  </div>
+  <h1>LAB TASK 2</h1>
+  <div class="container4">
+    <p class="lab2">
+      Lorem ipsum dolor sit amet consectetur <br />adipisicing elit. Quod
+      suscipit id quaerat ut sequi voluptatum. <br />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />Quo iusto
+      voluptatem reiciendis fuga similique saepe?
+    </p>
+  </div>
+</body>
+
+</html>

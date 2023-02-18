@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="shortcut icon" href="img/Music.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+        }
+
+        .music-card {
+            padding: 20px;
+            background: radial-gradient(rgba(255, 255, 255, 0.68), rgba(255, 192, 203, 0.826));
+            border: 1px solid pink;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .top ion-icon {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(255, 26, 26, 0.22);
+            color: #f53192;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .middle {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .middle img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 0 10px rgba(255, 26, 26, 0.22);
+        }
+
+        .middle-bottom {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        .bottom {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="music-card">
+            <div class="top">
+                <ion-icon name="chevron-back-outline"></ion-icon><ion-icon name="reorder-four-outline"></ion-icon>
+            </div>
+            <div class="middle"><img src="img/Dj.jpeg" alt="Reload"></div>
+            <div class="middle-bottom">
+                <div class="tittle">Ek Din app yun Humko </div>
+                <div class="tittle">By-Kumar Sanuu</div>
+
+            </div>
+            <div class="bottom">
+                <audio controls>
+                    <source
+                        src="img/Ek Din Aap Yun Humko Mil Jayenge LYRICS - Alka Yagnik, Kumar Sanu _ Jatin-Lalit, Javed A _ Yes Boss.mp3">
+                </audio>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+
+</html>

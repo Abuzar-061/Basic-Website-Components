@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuf Student Portal</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            color: white;
+        }
+        .logo{
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            font-weight: 900;
+            font-size: xx-large;
+            color: white;
+            height: 80px;
+            padding: 22px 20px;
+        }
+        .header{
+            display: block;
+            /* position: fixed; */
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            background-color: rgba(128, 128, 128, 0.411);
+            border-bottom: 1px solid white;
+            
+        }
+      
+        section{
+            width: 100%;
+            height: 130vh;
+            background: url(img/tree.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .container ion-icon{
+            color: white;
+        }
+        .txt{
+            margin: auto;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%);
+            border: 1px solid white;
+            align-items: center;
+            width: 500px;
+            height: 440px;
+            padding: 50px;
+        }
+        .para{
+            text-align: center;
+            font-size: xx-large;
+            font-family: 'Times New Roman', Times, serif;
+            margin-bottom: 2px;
+            color:orangered;
+            text-shadow: 0 0 10px orangered, 0 0 40px orangered, 0 0 80px orangered;
+        } 
+        #name{
+            width: 300px;
+            height: 25px;
+        }
+        #role{
+            width: 300px;
+            height: 25px;
+        }
+        #password{
+            width: 300px;
+            height: 25px;
+        }
+        .radio{
+            padding: 5px;
+        }
+        .btnn a{
+            text-decoration: none;
+            color: white;
+        }
+        .btn{
+            display: flex;
+        }
+        .btnn{
+            height: 30px;
+            width: 100px;
+            border-radius: 30px;
+            margin: 4px;
+            background-color: orangered;
+            border: 1px solid white;
+            color: white;
+        }
+        .btnn:hover{
+            box-shadow: 0 0 10px orangered, 0 0 40px orangered, 0 0 80px orangered;
+            cursor: pointer;
+        }
+        .btnn a:hover{
+            color: orange;
+        }
+        input{
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%);
+            border: none;
+            border-bottom: 1px solid orangered ;
+            color: white;
+            margin: 3px;
+            padding-top: 7px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        label{
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .p{
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        ::placeholder{
+            color: rgba(255, 255, 255, 0.413);
+        }
+        select{
+            color: white;
+            width: 300px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%);
+        }
+        option{
+            color: black;
+        }
+        input:focus{
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <section>
+    <div class="header">
+        <div class="logo">TUF Student Registration</div>
+        <div class="txt">
+            <h1 class="para">Sign up</h1>
+            <hr>
+            <br>
+            <!-- Forms --> 
+            <form action="Backened.php" method="post">
+               <label for="name">Registration no:</label>
+               <div >
+               <input type="text"name="myName" id="name" placeholder="Type Your Name" required>
+               </div>
+               <br>
+               <label for="Password">Password:</label>
+               <div >
+               <input type="password"name="Password" id="password" placeholder="Type Your Password" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+               </div>
+               <br>
+               <div>
+                <label for="Role">Role</label>
+                <div>
+                <select name="Student" id="student">
+                    <option value="teacher">Teacher</option>
+                    <option value="Student">Student</option>
+                    <option value="Management">Management</option>
+                </select>
+            </div>
+               </div>
+               <br>
+               <label for="Today Date">Date</label>
+       <div>
+       <input type="date"name="Date"id="Today Date">
+       </div>
+       <br>
+               <div class="radio">
+                <p class="p">My Gender:</p>
+                <br>
+                Male: <input class="radio" type="radio" name="myGender"> &nbsp; FeMale:<input class="radio" type="radio" name="myGender">
+          </div>
+          <br>
+               <div class="btn">
+                <button class="btnn"><a href="#">Submit</a></button>
+                <button class="btnn"><a href="#">Clear</a></button>
+               </div>
+            </form>
+        </div>
+    </section>
+</div>
+</body>
+</html>

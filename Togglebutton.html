@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic | Layout</title>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link rel="shortcut icon" href="img/moonpng.png" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: url(img/forest.jpg);
+        }
+
+        .dark-theme {
+            --primary-color: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url(img/forest.jpg);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Century Gothic;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: var(--primary-color);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar {
+            display: flex;
+            width: 100%;
+        }
+
+        .logo img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 30px;
+            padding-left: 4%;
+            filter: invert(100%);
+        }
+
+        .logo img:hover {
+            cursor: pointer;
+        }
+
+        .nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding-top: 30px;
+            padding-right: 4%;
+        }
+
+        .nav ul {
+            width: 100%;
+            display: flex;
+        }
+
+        .nav ul li {
+            list-style: none;
+            margin-right: 50px;
+        }
+
+        .nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            transition: all 0.7s ease-in-out 0.2s;
+            padding: 20px;
+            color: orange;
+            border-bottom: 2px solid white;
+        }
+
+        .burger {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 30px;
+            margin-right: 100px;
+        }
+
+        .line {
+            width: 33px;
+            background-color: white;
+            height: 4px;
+            margin: 3px 3px;
+        }
+
+        .burger:hover {
+            cursor: pointer;
+        }
+
+        .icon {
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        .icon:hover {
+            filter: invert(100%);
+            cursor: pointer;
+        }
+
+        .responsive-box {
+            position: absolute;
+            top: 0;
+            margin-top: 150px;
+            justify-content: center;
+            width: 100%;
+            height: 71vh;
+            background-color: rgba(5, 5, 51, 0.817);
+        }
+
+        @media only screen and (max-width:900px) {
+            .nav ul {
+                flex-direction: column;
+            }
+
+            .nav ul {
+                display: none;
+            }
+
+            .burger {
+                display: block;
+                z-index: 4;
+            }
+
+            .logo img {
+                width: 200px;
+            }
+
+            .icon {
+                position: absolute;
+                top: 6px;
+                right: 5px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .icon {
+                filter: invert(100%);
+            }
+        }
+
+        .resp {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(10, 10, 46);
+            z-index: 9;
+            border: 2px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+
+        .resp nav li {
+            list-style: none;
+            padding: 15px;
+        }
+
+        .resp a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .resp a:hover {
+            transition: all 0.7s ease-in-out 0.2s;
+            padding: 20px;
+            color: orange;
+            border-bottom: 2px solid white;
+        }
+
+        .checkbox {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .label {
+            background-color: #111;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            position: relative;
+            height: 26px;
+            width: 50px;
+            transform: scale(1.5);
+        }
+
+        .label .ball {
+            background-color: gray;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            height: 22px;
+            width: 22px;
+            transform: translateX(0px);
+            transition: transform 0.2s linear;
+        }
+
+        .checkbox:checked+.label .ball {
+            transform: translateX(24px);
+        }
+
+
+        .ion {
+            color: #f1c40f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/logo.png" alt="Reload">
+            </div>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="nav" id="nav">
+                <nav>
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="https://ranaabuzar076.wixsite.com/my-site" target="_blank">PORTFOLIO</a></li>
+                        <li><a href="#">CONTACT US</a></li>
+                        <div class="theme">
+                            <input type="checkbox" class="checkbox" id="chk">
+                            <label class="label" for="chk">
+                                <ion-icon name="moon-outline" class="ion"></ion-icon>
+                                <ion-icon name="sunny-outline" class="ion"></ion-icon>
+                                <div class="ball"></div>
+                            </label>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // -------------------- Theme-----------------------
+        const chk = document.getElementById('chk');
+
+        chk.addEventListener('change', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+    </script>
+</body>
+
+</html>

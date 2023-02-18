@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark-Mode | Light-Mode</title>
+    <link rel="shortcut icon" href="img/moonpng.png" type="image/x-icon">
+    <style>
+        /* <!------------------------------ Dark-Mode & Light-Mode ------------------------->  */
+        :root{
+            --primary-color: black;
+            --secondary-color: gray;
+        }
+        .dark-theme{
+            --primary-color: gray;
+            --secondary-color: black;
+            --third-color:invert(100%);
+        }
+        /* <!------------------------------ Body ------------------------->  */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: var(--secondary-color);
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            background-color: var(--primary-color);
+        }
+        /* <!----------------NAVBAR Section-----------------> */
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo{
+           margin: 30px;
+        }
+        .nav{
+            margin: 30px;
+        }
+        .nav ul{
+            display: flex;
+        }
+        .nav li{
+            list-style: none;
+        }
+        .nav a{
+            text-decoration: none;
+            padding: 30px;
+        }
+        .nav a:hover{
+            color: orangered;
+        }
+        /* <!------------------------------ Content ------------------------->  */
+        .content{
+            position: relative;
+            top: 130px;
+        }
+        .content h1{
+            font-size: 70px;
+            text-align: center;
+            color: orangered;
+        }
+        .content p{
+            text-align: center;
+        }
+       .content span{
+        color: orangered;
+       }
+        /* <!------------------------------ Dark-Mode & Light-Mode ------------------------->  */
+       .icon{
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        filter: var(--third-color);
+       }
+       .icon:hover{
+        filter: invert(100%);
+       }  
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="img/Sun.png" alt="" height="100px" width="100px">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="darkmode&lightmode.html" target="_blank">HOME</a></li>
+                    <li><a href="https://ranaabuzar076.wixsite.com/my-site" target="_blank">ABOUT</a></li>
+                    <li><a href="https://ranaabuzar076.wixsite.com/my-site" target="_blank">PORTFOLIO</a></li>
+                    <li><a href="box.html" target="_blank">SERVICES</a></li>
+                    <li><a href="contactus.html" target="_blank">HIRE ME</a></li>
+                    <!---------------------- Dark-Mode & Light-Mode ----------------->
+                    <!------------------------------ Button ------------------------->
+                    <img src="img/Dark-mode.png" alt="Reload" class="icon" id="icon">
+                </ul>
+            </div> 
+        </div>
+        <!------------------------------ Content ------------------------->
+        <div class="content">
+            <div class="intro">
+                <h1>******</h1>
+                <p> &nbsp;****** ******* <span>******* ******* ****</span> ******* **** ** <br>
+                &nbsp;&nbsp;******* ******* <span>******* ******* ****</span> ******* **** *** <br>
+                &nbsp;&nbsp;&nbsp;******** ******* <span>******* ******* ****</span> ******* **** **** </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var icon = document.getElementById("icon");
+        icon.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+            icon.src = "img/Light-mode.png";
+        }
+        else{
+            icon.src = "img/Dark-mode.png";
+        }
+        
+        }
+    </script>
+</body>
+</html>

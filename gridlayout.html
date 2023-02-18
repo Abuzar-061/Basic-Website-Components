@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        *{
+            background-color: black;
+        }
+        .container{
+            color: black;
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas:
+            'navbar navbar navbar navbar'
+            'section section  section aside'
+            'footer footer footer footer' ;
+        }
+        .navbar{
+            background-color: cyan !important;
+            border: 2px solid white;
+            background-color: black;
+            grid-area: navbar;
+        } 
+        .section{
+            background-color: cyan !important;
+            border: 2px solid white;
+            background-color: black;
+            grid-area: section;
+        }
+        .aside{
+            background-color: cyan !important;
+            border: 2px solid white;
+            background-color: black;
+            grid-area: aside;
+        }
+        .footer{
+            background-color: cyan !important;
+            border: 2px solid white;
+            background-color: black;
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar"> Abuzar Abuzar Abuzar Abuzar</div>
+        <div class="section">Lorem ipsum dolor sit amet.</div>
+        <div class="aside">Lorem ipsum dolor sit amet consectetur!</div>
+        <div class="footer">Iamfooter</div>
+    </div>
+</body>
+</html>
