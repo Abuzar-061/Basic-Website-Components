@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .content {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <body>
+    <div class="container">
+      <video autoplay muted loop>
+        <source src="video/Sierra Kidd  Cheriimoya -  Living Life In The Night [slowed & bass boosted].mp4"
+          type="video/mp4">
+      </video>
+      <div class="overlay">
+        <h1>Welcome to My Page</h1>
+        <p>This is some text on the background video page.</p>
+      </div>
+    </div>
+    <div class="content">
+
+    </div>
+
+    <script>
+      const video = document.querySelector('video');
+      video.volume = 0;
+
+      video.addEventListener('loadedmetadata', () => {
+        video.play();
+      });
+
+    </script>
+
+  </body>
+
+</html>
