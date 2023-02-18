@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card | HTML</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-image: radial-gradient(white, pink);
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        /*<!-- ----------------Card CSS------------------- --> */
+
+        .card {
+            width: 350px;
+            height: 300px;
+            border: 1px solid black;
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-image-slider {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            transition: 0.8s;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slider-image:hover {
+            transform: scale(1.2);
+        }
+
+        .button {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            position: relative;
+            cursor: pointer;
+            bottom: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-image-slider" id="image-slider">
+
+                <img src="img/product-9.jpg" class="slider-image">
+                <img src="img/product-2.jpg" class="slider-image">
+                <img src="img/product-3.jpg" class="slider-image">
+            </div>
+            <div class="button">
+                <button id="prev-btn" class="btn"><ion-icon name="arrow-back-outline"></ion-icon></button>
+                <button id="next-btn" class="btn"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+            </div>
+            <div class="card-details">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ----------------Script For ion-icon------------------- -->
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- ----------------Script For Card-Image------------------- -->
+
+
+    <script>
+        let imageIndex = 0;
+        const images = document.getElementsByClassName('slider-image');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        prevBtn.addEventListener('click', () => {
+            images[imageIndex].style.display = 'none';
+            imageIndex = (imageIndex - 1 + images.length) % images.length;
+            images[imageIndex].style.display = 'block';
+        });
+
+        nextBtn.addEventListener('click', () => {
+            images[imageIndex].style.display = 'none';
+            imageIndex = (imageIndex + 1) % images.length;
+            images[imageIndex].style.display = 'block';
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
