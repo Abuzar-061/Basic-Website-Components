@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar using HTML, CSS and Javascript</title>
+    <link rel="stylesheet" href="Responsive-Navbar.css">
+</head>
+
+<body>
+    <!-- ------------------------NavBar-------------------------- -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <div class="nav">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="" class="active">Home</a>
+                        </li>
+                        <li>
+                            <a href="">Products</a>
+                        </li>
+                        <li>
+                            <a href="">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="">About</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- ------------------------Hamburger Icon-------------------------- -->
+        <div class="Hamburger">
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+    <!-- ------------------------JavaScript For NavBar-------------------------- -->
+    <script>
+        hamburger = document.querySelector(".hamburger");
+        nav = document.querySelector("nav");
+        hamburger.onclick = function () {
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>
