@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!------------------------- BOXICONS ------------------------->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Portfolio | Abuzar</title>
+    <link rel="shortcut icon" href="img/Sun.png" type="image/x-icon">
+    <style>
+        /*----------------------- GOOGLE FONTS -----------------------*/
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+        /*----------------------- VARIABLES CSS -----------------------*/
+        :root {
+            --header-height: 3.5rem;
+            --first-color: hsl(273, 97%, 66%);
+            --first-color-shape: hsl(253, 33%, 32%);
+            --title-color: hsl(273, 8%, 15%);
+            --text-color: hsl(273, 4%, 45%);
+            --body-color: hsl(273, 100%, 99%);
+            --container-color: #fff;
+            --title-color-dark: hsl(273, 83%, 98%);
+            --text-color-dark: hsl(273, 21%, 56%);
+            --container-color-dark: hsl(273, 80%, 14%);
+            /*-----------------------Font and typography -----------------------*/
+            --body-font: 'Poppins', sans-serif;
+            --big-font-size: 1.5rem;
+            --normal-font-size: .938rem;
+            --small-font-size: .813rem;
+            /*----------------------- z index -----------------------*/
+            --z-fixed: 100;
+        }
+
+
+        @media screen and (min-width: 968px) {
+            :root {
+                --big-font-size: 2rem;
+                --normal-font-size: 1rem;
+                --small-font-size: .875rem;
+            }
+        }
+
+        /* --------------------------Scroll Behaviour-------------------------- */
+        html::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background-color: var(--container-color-dark);
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 100%;
+        }
+
+        html::-webkit-scrollbar-track {
+            background-color: #ddaafe;
+            /* background: none; */
+        }
+
+        /*----------------------- BASE -----------------------*/
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--title-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /*----------------------- REUSABLE CSS CLASSES -----------------------*/
+        .container {
+            max-width: 100%;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            padding-left: 30px;
+            padding-right: 10px;
+        }
+
+        .section__height {
+            height: fit-content;
+        }
+
+        /*----------------------- HEADER Y NAV -----------------------*/
+        .nav {
+            background-color: var(--container-color-dark);
+            padding-top: 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120vh;
+        }
+
+        .nav__shape {
+            width: 200px;
+            height: 200px;
+            background-color: var(--first-color-shape);
+            border-radius: 50%;
+            position: absolute;
+            top: -2rem;
+            left: -2rem;
+            filter: blur(90px);
+        }
+
+        .nav__close {
+            position: relative;
+            display: inline-flex;
+            font-size: 1.8rem;
+            color: var(--text-color-dark);
+            cursor: pointer;
+            margin-bottom: 3.5rem;
+        }
+
+        .nav__img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav__mask {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(224deg, #a22fe9 -2%, #ddaafe 97%);
+            background-size: cover;
+            background-position: center;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            margin-bottom: 1rem;
+        }
+
+        .nav__data {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .nav__greeting {
+            display: block;
+            color: var(--text-color-dark);
+            font-size: var(--small-font-size);
+            font-weight: 500;
+            margin-bottom: .25rem;
+        }
+
+        .nav__name {
+            color: var(--title-color-dark);
+            font-size: var(--big-font-size);
+            line-height: 130%;
+        }
+
+        .nav__list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        .nav__link {
+            color: var(--text-color-dark);
+            display: inline-flex;
+            align-items: center;
+            column-gap: 1rem;
+            font-size: var(--small-font-size);
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        .nav__link i {
+            font-size: 1.15rem;
+        }
+
+        .nav__link:hover {
+            color: var(--title-color-dark);
+        }
+
+        .main {
+            position: relative;
+            background-color: var(--body-color);
+            transition: .4s;
+        }
+
+        .header {
+            width: 100%;
+            background-color: var(--container-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: var(--z-fixed);
+        }
+
+        .header__nav {
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__logo,
+        .header__toggle {
+            color: var(--title-color);
+        }
+
+        .header__logo {
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        .header__toggle {
+            font-size: 1.15rem;
+            cursor: pointer;
+        }
+
+        /*----------------------- Show menu -----------------------*/
+        .show-menu {
+            transform: translate(70%);
+        }
+
+        /*----------------------- Change background header -----------------------*/
+        .scroll-header {
+            box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+        }
+
+        /*----------------------- Active link -----------------------*/
+        .active-link {
+            color: var(--title-color-dark);
+        }
+
+        /*----------------------- BREAKPOINTS -----------------------*/
+        /* For small devices */
+        @media screen and (max-width: 320px) {
+            .container {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+        }
+
+        /*----------------------- For medium devices -----------------------*/
+        @media screen and (min-width: 767px) {
+            .show-menu {
+                transform: translate(40%);
+            }
+        }
+
+        /*----------------------- For large devices -----------------------*/
+        @media screen and (min-width: 1024px) {
+            .container {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .section {
+                padding: 7rem 0 2rem;
+            }
+
+            .header__nav {
+                height: calc(var(--header-height) + 1.5rem);
+            }
+
+            .nav__shape {
+                width: 350px;
+                height: 350px;
+            }
+
+            .nav__mask {
+                width: 100px;
+                height: 100px;
+                border-radius: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .nav__img {
+                width: 90px;
+            }
+
+            .nav__link {
+                font-size: var(--normal-font-size);
+            }
+
+            .nav__link i {
+                font-size: 1.25rem;
+            }
+        }
+
+        /*----------------------- Home -----------------------*/
+        .Home {
+            padding-right: 50px;
+            padding-top: 100px;
+            width: 100%;
+            padding-bottom: 20px;
+            height: fit-content;
+            background-color: var(--container-color-dark);
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            color: var(--container-color-dark);
+        }
+
+        .Home p {
+            color: #ddaafe;
+        }
+
+        .Home h1 {
+            color: white;
+        }
+
+        .Image {
+            margin-top: 100px;
+            margin-left: 20px;
+            width: 400px;
+            height: fit-content;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            border-left: 5px solid #a22fe9;
+            border-top: 5px solid #a22fe9;
+        }
+
+        /*----------------------- About -----------------------*/
+        .About {
+            padding: 10px;
+            width: 100%;
+            height: fit-content;
+            background-size: cover;
+            text-align: center;
+            background-position: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--container-color-dark);
+        }
+
+        .Image2 {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 20px 20px;
+        }
+
+        /*----------------------- Services -----------------------*/
+        .Portfolio {
+            width: 100%;
+            height: fit-content;
+            background-color: #ddaafe;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            color: var(--container-color-dark);
+            padding: 100px 20px 100px 20px;
+        }
+
+        .card-section {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .service-card {
+            margin: 5px;
+            border-radius: 10px;
+            width: 200px;
+            height: 240px;
+            border: 1px solid #a22fe9;
+            background-color: #333;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .service-card h3 {
+            color: #ddaafe;
+            font-weight: 100;
+        }
+
+        .service-card span {
+            font-size: 100px;
+            position: relative;
+            right: 25px;
+            font-weight: 800;
+        }
+
+        /*----------------------- Skills -----------------------*/
+        .container-skill {
+            padding: 100px 20px 100px 20px;
+            width: 100%;
+            height: fit-content !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skill-bars {
+            padding: 30px 30px;
+            width: 900px;
+            height: fit-content;
+            background: #fff;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .bar {
+            margin: 20px 0;
+            padding: 8px 0;
+        }
+
+        .bar:first-child {
+            margin-top: 0px;
+        }
+
+        .info {
+            margin-bottom: 5px;
+        }
+
+        .info span {
+            font-weight: 500;
+            font-size: 17px;
+            opacity: 0;
+            animation: showText 0.5s 1s linear forwards;
+        }
+
+        @keyframes showText {
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .progress-line {
+            height: 10px;
+            width: 100%;
+            background: #f0f0f0;
+            position: relative;
+            transform: scaleX(0);
+            transform-origin: left;
+            border-radius: 10px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05),
+                0 1px rgba(255, 255, 255, 0.8);
+            animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+        }
+
+        .progress-line span {
+            height: 100%;
+            position: absolute;
+            border-radius: 10px;
+            transform: scaleX(0);
+            transform-origin: left;
+            background: #333;
+            animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+        }
+
+        .progress-line span::before {
+            position: absolute;
+            content: "";
+            top: -10px;
+            right: 0;
+            height: 0;
+            width: 0;
+            opacity: 0;
+            border: 7px solid transparent;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-top-color: #000;
+            animation: showText2 0.5s 1.5s linear forwards;
+        }
+
+        .progress-line span::after {
+            position: absolute;
+            top: -28px;
+            right: 0;
+            font-weight: 500;
+            background: #000;
+            color: #fff;
+            opacity: 0;
+            padding: 1px 8px;
+            font-size: 12px;
+            border-radius: 3px;
+            animation: showText2 0.5s 1.5s linear forwards;
+        }
+
+        @keyframes animate {
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        .html span {
+            width: 84%;
+        }
+
+        .css span {
+            width: 92%;
+        }
+
+        .JavaScript span {
+            width: 60%;
+        }
+
+        .react span {
+            width: 80%;
+        }
+
+        .php span {
+            width: 50%;
+        }
+
+        .sql span {
+            width: 75%;
+        }
+
+        .python span {
+            width: 50%;
+        }
+
+        @keyframes showText2 {
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .html span::after {
+            content: "84%";
+        }
+
+        .css span::after {
+            content: "92%";
+        }
+
+        .JavaScript span::after {
+            content: "60%";
+        }
+
+        .react span::after {
+            content: "80%";
+        }
+
+        .php span::after {
+            content: "50%";
+        }
+
+        .sql span::after {
+            content: "75%";
+        }
+
+        .python span::after {
+            content: "50%";
+        }
+
+        /* Media Query */
+        /* For tablet */
+        @media screen and (max-width:900px) {
+            .container-skill h1 {
+                font-size: 2rem;
+                text-align: center;
+                color: #fff;
+                text-shadow: 3px 4px black;
+            }
+
+            .skill-bars {
+                padding: 15px 20px;
+                width: 600px;
+                background: #fff;
+                box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+
+            }
+
+            .card-section {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .form {
+                width: 200px;
+            }
+
+        }
+
+        /* For mobile */
+        @media screen and (max-width:600px) {
+            .container-skill h1 {
+                font-size: 1rem;
+                text-align: center;
+                color: #fff;
+                text-shadow: 3px 4px black;
+            }
+
+            .skill-bars {
+                padding: 10px 10px;
+                width: 400px;
+                background: #fff;
+                box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+
+            }
+
+            .card-section {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .form {
+                margin-top: 30px;
+                width: 200px;
+                height: fit-content;
+            }
+
+        }
+
+        /*----------------------- Contact -----------------------*/
+
+        .Contact {
+            border-top: 5px solid #25053a;
+            width: 100%;
+            height: 100vh;
+            background-image: url(img/stars.jpg);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: slider 20s infinite linear;
+        }
+
+        @keyframes slider {
+            80% {
+                background: url(img/stars.jpg);
+            }
+        }
+
+        .form {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            width: 450px;
+            height: 380px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%);
+            position: absolute;
+            border-radius: 10px;
+            padding: 125px;
+            transition: 0.8s;
+        }
+
+        .form h2 {
+            cursor: grab;
+            box-shadow: 0 0 10px gray, 0 0 40px gray, 0 0 80px gray;
+            width: 220px;
+            font-family: sans-serif;
+            text-align: center;
+            color: white;
+            font-size: 22px;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: black;
+            border-radius: 10px;
+            padding: 8px;
+        }
+
+        .form input {
+            color: white;
+            width: 240px;
+            height: 35px;
+            background: transparent;
+            border-bottom: 1px solid white;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-top: 30px;
+            font-family: sans-serif;
+        }
+
+        .form input:focus {
+            outline: none;
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.699);
+            font-family: sans-serif;
+        }
+
+        .btnnn {
+            width: 240px;
+            height: 40px;
+            background-image: linear-gradient(30deg, black 50%, transparent 50%);
+            background-size: 600px;
+            background-repeat: no-repeat;
+            background-position: 0%;
+            border: 1px solid white;
+            margin-top: 50px;
+            color: white;
+            font-size: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.8s ease-in-out;
+        }
+
+        .btnnn a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .btnnn:hover {
+            background-position: 100%;
+            transition: 1.5s;
+            background-color: gray;
+            box-shadow: 0 0 10px gray, 0 0 40px gray, 0 0 80px gray;
+            color: black;
+        }
+
+        .contactus h1 {
+            font-size: 50px;
+        }
+
+        .contactus h1 span {
+            font-size: 100px;
+            color: rgb(36, 190, 144);
+        }
+
+        .btn1 {
+            cursor: pointer;
+        }
+
+        /* For tablet */
+        @media screen and (max-width:900px) {
+            .form {
+                width: 400px;
+            }
+        }
+
+        /* For Mobile */
+        @media screen and (max-width:600px) {
+            .form {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!------------------------- Side-NAV ------------------------->
+    <nav class="nav" id="nav">
+        <div class="nav__menu container" id="nav-menu">
+            <div class="nav__shape"></div>
+
+            <div class="nav__close" id="nav-close">
+                <i class='bx bx-x'></i>
+            </div>
+
+            <div class="nav__data">
+                <div class="nav__mask">
+                    <!------------------------- Profile picture ------------------------->
+                    <img src="img/My Picture.jpg" alt="" class="nav__img" width="100%">
+                </div>
+
+                <span class="nav__greeting">Hi, I'm</span>
+                <h1 class="nav__name">Muhammad <br> Abuzar</h1>
+            </div>
+
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#home" class="nav__link active-link">
+                        <i class='bx bx-home'></i> Home
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">
+                        <i class='bx bx-user'></i> About
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#Services" class="nav__link">
+                        <i class='bx bx-briefcase-alt-2'></i> Services
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#skills" class="nav__link">
+                        <i class='bx bx-bookmark'></i> Skills
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">
+                        <i class='bx bx-message-square-detail'></i> Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!------------------------- MAIN ------------------------->
+    <div class="main" id="main">
+        <!------------------------- HEADER-NAV ------------------------->
+        <header class="header" id="header">
+            <nav class="header__nav container">
+                <a href="#home" class="header__logo">
+                    Abuzar
+                </a>
+
+                <!------------------------- Toggle button ------------------------->
+                <div class="header__toggle" id="header-toggle">
+                    <ion-icon name="menu-outline" style="width: 40px; height: 40px;"></ion-icon>
+                </div>
+            </nav>
+        </header>
+
+
+        <!-- When inserting your content into sections, remove the section__height class -->
+        <!------------------------- HOME ------------------------->
+        <section class="Home section__height container" id="home">
+            <div class="Content">
+                <h1>Hello, My name is <span style="font-size: 20px; color: #a22fe9; font-weight: 100;"><i>Muhammad
+                            Abuzar</i></span></h1>
+                <br>
+                <p>I'm a web Developer with extensive experience of over 2 <br> years.My expertise is to create and
+                    design websites,<br> graphic designing, and many more
+                </p>
+            </div>
+            <div class="Image"><img src="img/me.jpg" alt="Abuzar.jpg"></div>
+
+        </section>
+
+        <!------------------------- ABOUT ------------------------->
+        <section class="About container2" id="about" style="display: flex; flex-direction: column;">
+            <h1 style="color: black; font-size: 70px;"><i>ABOUT</i></h1>
+            <div class="Image2">
+                <img src="img/My Picture.jpg" alt="Abuzar.jpg">
+            </div>
+            <div class="content">
+                <h3>
+                    Welcome to my website! My name is <span>Muhammad Abuzar,</span> and I'm a web developer with 2 years
+                    of experience in the industry.
+                </h3>
+                <br>
+                <p>
+                    I've always had a passion for technology and the internet, and I knew from a young age that I wanted
+                    to pursue a career in web development. Over the years, I've honed my skills in a variety of
+                    programming languages and software, including HTML, CSS, JavaScript, PHP, Python, and React.
+
+                    My approach to web development is focused on creating clean, user-friendly websites and applications
+                    that meet the needs of my clients. I work closely with my clients to understand their requirements
+                    and
+                    goals, and I strive to deliver projects that exceed their expectations.
+
+                    In addition to my technical skills, I pride myself on my strong communication and collaboration
+                    skills. I believe that
+                    open and honest communication is the key to a successful project, and I work closely with my clients
+                    and team members to
+                    ensure that everyone is on the same page.
+
+                    I'm always learning and growing as a web developer, and I'm committed to staying up-to-date with the
+                    latest technologies
+                    and trends in the industry. Whether it's mastering a new programming language or learning about the
+                    latest design trends, I'm always looking for ways to improve my skills and stay ahead of the curve.
+
+                    If you're looking for a web developer who is passionate, creative, and dedicated to delivering
+                    high-quality work, I
+                    would love to hear from you. Please feel free to browse my portfolio and contact me with any
+                    questions or project inquiries.
+
+                    Thank you for visiting my website, and I look forward to the opportunity to work with you!</p>
+            </div>
+
+        </section>
+
+        <!------------------------- Services ------------------------>
+        <section class="Portfolio section__height container" id="Services"
+            style="display: flex; flex-direction: column;">
+            <h1 style="color: #25053a; font-weight: 900;">Why do you need a web developement services? </h1>
+            <div class="card-section" style="display: flex;">
+                <div class="service-card">
+                    <span>1</span>
+                    <h3>Visually appealing polished, and professional</h3>
+                </div>
+                <div class="service-card">
+                    <span>2</span>
+                    <h3>Optimized for mobile devices and search engines</h3>
+                </div>
+                <div class="service-card">
+                    <span>3</span>
+                    <h3>Intuitive to use</h3>
+                </div>
+            </div>
+            <div class="card-section" style="display: flex;">
+                <div class="service-card">
+                    <span>4</span>
+                    <h3>With easily accesible contact information</h3>
+                </div>
+                <div class="service-card">
+                    <span>5</span>
+                    <h3>Matching the current trends</h3>
+                </div>
+                <div class="service-card">
+                    <span>6</span>
+                    <h3>Regularly check for any broken links or not working scripts</h3>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!------------------------- SKILLS ------------------------->
+        <section class="Skills section__height container" id="skills">
+            <div class="container-skill">
+
+                <div class="skill-bars">
+                    <h1>Skill's</h1>
+                    <div class="bar">
+                        <div class="info"> <span>HTML</span> </div>
+                        <div class="progress-line html"> <span></span> </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info"> <span>CSS</span> </div>
+                        <div class="progress-line css"> <span></span> </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info"> <span>Java Script</span> </div>
+                        <div class="progress-line JavaScript"> <span></span> </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info"> <span>React</span> </div>
+                        <div class="progress-line react"> <span></span> </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info"> <span>PHP</span> </div>
+                        <div class="progress-line php"> <span></span> </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info"> <span>SQL</span> </div>
+                        <div class="progress-line sql"> <span></span> </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info"> <span>Python</span> </div>
+                        <div class="progress-line python"> <span></span> </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!------------------------- CONTACT ------------------------->
+        <section class="Contact section__height container" id="contact">
+            <div class="form" id="form">
+                <form action="backened.php">
+                    <h2>Contact Us !</h2>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <input type="text" id="text" name="textbox" placeholder="Write Your Message" required>
+                    <button class="btnnn" id="button1" type="button"><a href="mailto:abuzarmuir76@gmail.com">Submit
+                            Now</a></button>
+            </div>
+
+        </section>
+    </div>
+
+    <!------------------------- JS For Ion-Icon------------------------->
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <!------------------------- MAIN JS ------------------------->
+    <script>
+        /*----------------------- SHOW MENU -----------------------*/
+        const headerToggle = document.getElementById('header-toggle'),
+            main = document.getElementById('main'),
+            navClose = document.getElementById('nav-close')
+
+        /*----------------------- MENU SHOW -----------------------*/
+        /* Validate if constant exists */
+        if (headerToggle) {
+            headerToggle.addEventListener('click', () => {
+                main.classList.add('show-menu')
+            })
+        }
+
+        /* ----------------------- MENU HIDDEN -----------------------*/
+        /*----------------------- Validate if constant exists----------------------- */
+        if (navClose) {
+            navClose.addEventListener('click', () => {
+                main.classList.remove('show-menu')
+            })
+        }
+
+        /*----------------------- REMOVE MENU MOBILE -----------------------*/
+        const navLink = document.querySelectorAll('.nav__link')
+
+        function linkAction() {
+            const main = document.getElementById('main')
+            // When we click on each nav__link, we remove the show-menu class
+            main.classList.remove('show-menu')
+        }
+        navLink.forEach(n => n.addEventListener('click', linkAction))
+
+        /*----------------------- CHANGE BACKGROUND HEADER -----------------------*/
+        function scrollHeader() {
+            const header = document.getElementById('header')
+            // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
+            if (this.scrollY >= 50) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
+        }
+        window.addEventListener('scroll', scrollHeader)
+
+        /*----------------------- SCROLL SECTIONS ACTIVE LINK -----------------------*/
+        const sections = document.querySelectorAll('section[id]')
+
+        function scrollActive() {
+            const scrollY = window.pageYOffset
+
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight,
+                    sectionTop = current.offsetTop - 58,
+                    sectionId = current.getAttribute('id')
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+                } else {
+                    document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+                }
+            })
+        }
+        window.addEventListener('scroll', scrollActive)
+    </script>
+
+</body>
+
+</html>
