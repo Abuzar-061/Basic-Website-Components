@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Meter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skill {
+            margin: 20px;
+            width: 160px;
+            height: 160px;
+            position: relative;
+        }
+
+        .outer {
+            padding: 20px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+        }
+
+        .inner {
+            border-radius: 50%;
+            height: 120px;
+            width: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        #number {
+            font-weight: 600px;
+            color: black;
+        }
+
+        circle {
+            fill: none;
+            stroke: url(#GradientColor);
+            stroke-width: 20px;
+            stroke-dasharray: 436;
+            stroke-dashoffset: 436;
+            animation: anim 2s linear forwards;
+        }
+
+        @keyframes anim {
+            100% {
+                stroke-dashoffset: 150;
+            }
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- ---------------------Skill Meter-------------------- -->
+        <div class="skill">
+            <div class="outer">
+                <div class="inner">
+                    <div class="number" id="number"></div>
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                    <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="#e91e63" />
+                        <stop offset="100%" stop-color="#673ab7" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+            </svg>
+        </div>
+        <!-- ---------------------Skill Meter-------------------- -->
+        <div class="skill">
+            <div class="outer">
+                <div class="inner">
+                    <div class="number" id="number2"></div>
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                    <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="#e91e63" />
+                        <stop offset="100%" stop-color="#673ab7" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+            </svg>
+        </div>
+
+    </div>
+
+    <script>
+        var num = document.getElementById('number');
+        let counter = 0;
+        setInterval(() => {
+            if (counter == 65) {
+                clearInterval();
+            }
+            else {
+                counter += 1;
+                num.innerHTML = counter + "%"
+            }
+
+        }, 30);
+        // -----------------------------
+        var numm = document.getElementById('number2');
+        let counterr = 0;
+        setInterval(() => {
+            if (counterr == 65) {
+                clearInterval();
+            }
+            else {
+                counterr += 1;
+                numm.innerHTML = counterr + "%"
+            }
+
+        }, 30);
+    </script>
+</body>
+
+</html>
