@@ -1,0 +1,251 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .service {
+      width: 100%;
+      justify-content: center;
+      border-top: 5px solid rgb(167, 127, 20);
+      background-color: #232533;
+    }
+
+    .card h2 {
+      color: rgb(167, 127, 20);
+    }
+
+    .services {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      text-align: center;
+      justify-content: center;
+      margin: 8px;
+      width: 203px;
+      height: 440px;
+      border: 1px solid white;
+      background-color: #323444;
+    }
+
+    .card img {
+      border-bottom: 2px solid rgb(85, 78, 78);
+      background-position: center;
+      background-size: cover;
+      transition: all 0.5s ease-in-out;
+      overflow: hidden;
+    }
+
+    .card img:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .card p {
+      color: gray;
+      padding: 10px;
+    }
+
+    .btn {
+      margin-top: 5px;
+      background-image: linear-gradient(45deg, rgba(167, 128, 20, 0.918)50%, transparent 50%);
+      background-repeat: no-repeat;
+      background-size: 500px;
+      background-position: 0%;
+      padding: 10px;
+      border-radius: 5px;
+      width: 180px;
+    }
+
+    .btn a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-position: 100%;
+      background-color: rgba(154, 120, 26, 0.347);
+      transition: 1.5s;
+      border: 2px solid white;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgb(167, 127, 20), 0 0 30px rgb(167, 127, 20), 0 0 80px rgb(167, 127, 20);
+    }
+
+    .service h1 span {
+      font-size: 150px;
+      color: rgb(167, 127, 20);
+    }
+
+    .service h1 {
+      color: white;
+      display: flex;
+      justify-content: center;
+      font-size: 50px;
+    }
+
+    .service span:hover {
+      filter: invert(100%);
+      cursor: grab;
+    }
+
+    .card-img {
+      overflow: hidden;
+      width: 202px;
+      height: 202px;
+    }
+
+    .btn2 {
+      position: fixed;
+      margin: 10px;
+      border: none;
+      background: transparent;
+    }
+
+    .back ion-icon {
+      margin-left: 10px;
+      font-size: 50px;
+      color: rgb(167, 127, 20);
+      transition: 0.9s;
+    }
+
+    .card-ion ion-icon {
+      color: gray;
+      font-size: 25px;
+      margin: 10px;
+    }
+
+    .back ion-icon:hover {
+      color: white;
+    }
+
+    ion-icon:hover {
+      color: white;
+    }
+
+    .btn a {
+      color: #232533;
+      font-size: 15px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .contact {
+      width: 70px;
+      background: url(img/message-logo.jpg);
+      filter: invert(100%);
+      background-position: center;
+      background-size: cover;
+      color: white;
+      display: flex;
+      border: 1px solid white;
+      bottom: 10px;
+      position: fixed;
+      border-radius: 50px;
+      padding: 30px;
+      right: 10px;
+      transition: 0.8s;
+    }
+
+    .contact:hover {
+      filter: invert(0%);
+      width: 100px;
+      cursor: pointer;
+    }
+
+    /* --------------------------------Footer---------------------------- */
+    footer {
+      color: white;
+      border-top: 5px solid rgb(167, 127, 20);
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      width: 100%;
+      height: 50vh;
+      background-color: black;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    .icon a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .icon ion-icon {
+      color: white;
+      font-size: 20px;
+      margin-top: 5px;
+      padding-right: 10px;
+    }
+
+    ion-icon:hover {
+      color: rgb(167, 127, 20);
+    }
+
+    footer h1 span {
+      color: rgb(167, 127, 20);
+      font-size: 50px;
+    }
+
+    .support {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .support a {
+      text-decoration: none;
+      padding-top: 10px;
+    }
+
+    .support a:hover {
+      color: rgb(167, 127, 20);
+    }
+
+    .signup {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .signup input {
+      color: white;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.653);
+      outline: none;
+      width: 200px;
+      height: 30px;
+
+    }
+
+    .btn5 {
+      margin-top: 20px;
+      width: 100px;
+      height: 40px;
+      background-color: rgb(167, 127, 20);
+      cursor: pointer;
+      transition: 0.8s ease-in-out;
+    }
+
+    .btn5 a {
+      text-decoration: none;
+      font-family: serif;
+      font-size: 20px;
+    }
+
+    .btn5:hover {
+      border: none;
+      background-color: #232533;
+    }
+
+    h3 span {
+      color: orangered;
+      font-size: 23px;
+    }
+
+    h3 {
+      color: white;
+    }

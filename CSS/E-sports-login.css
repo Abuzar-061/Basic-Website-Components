@@ -1,0 +1,214 @@
+
+    html::-webkit-scrollbar {
+        width: 10px;
+        scroll-behavior: smooth;
+    }
+
+    html::-webkit-scrollbar-track {
+        background-color: black;
+    }
+
+    html::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: rgba(51, 110, 123);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Century Gothic;
+    }
+
+    .containerr {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.642) 50%), url(../img/stars.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .navv {
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+
+    .navbar {
+        background-color: rgba(51, 110, 123);
+        /* height: 100px; */
+    }
+
+    .navbar a {
+        color: white !important;
+    }
+
+    .dropdown-menu a {
+        color: black !important;
+    }
+
+    .navbar-brand img {
+        width: 100px;
+    }
+
+    .ion {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding-right: 10px;
+    }
+
+    .hoverr {
+        color: wheat !important;
+        padding: 10px !important;
+        text-decoration: none;
+    }
+
+    .hoverr:hover {
+        color: chartreuse !important;
+    }
+
+    .nav-link:hover {
+        color: chartreuse !important;
+    }
+
+    .nav-item {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .href {
+        margin-top: 10px;
+        text-align: center;
+        color: white;
+    }
+
+    .href:hover {
+        text-shadow: 0 0 10px rgba(51, 110, 123), 0 0 40px rgba(51, 110, 123), 0 0 80px rgba(51, 110, 123);
+    }
+
+    .formm {
+        text-align: center;
+        margin-top: 100px;
+        justify-content: center;
+        width: 350px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%);
+        border-radius: 10px;
+        padding: 25px;
+
+    }
+
+    .formm h2 {
+        cursor: grab;
+        box-shadow: 0 0 10px rgba(51, 110, 123), 0 0 40px rgba(51, 110, 123), 0 0 80px rgba(51, 110, 123);
+        font-family: sans-serif;
+        text-align: center;
+        color: rgba(51, 110, 123);
+        letter-spacing: 2px;
+        font-size: 22px;
+        font-family: 'Times New Roman', Times, serif;
+        background-color: black;
+        border-radius: 10px;
+        padding: 8px;
+    }
+
+    .formm input {
+        color: white;
+        width: 240px;
+        height: 35px;
+        background: transparent;
+        border-bottom: 1px solid white;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        font-size: 15px;
+        letter-spacing: 1px;
+        margin-top: 30px;
+        font-family: sans-serif;
+    }
+
+    .formm input:focus {
+        outline: none;
+    }
+
+    ::placeholder {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .linkk {
+        color: white;
+        margin-top: 20px;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 15px;
+    }
+
+    .linkk a {
+
+        color: rgba(51, 110, 123);
+    }
+
+    .icon a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .icon ion-icon {
+        color: white;
+        font-size: 20px;
+        margin: 2px;
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+
+    ion-icon:hover {
+        color: rgba(51, 110, 123);
+    }
+
+    .btnnn {
+        width: 240px;
+        height: 40px;
+        background-image: linear-gradient(30deg, black 50%, transparent 50%);
+        background-size: 600px;
+        background-repeat: no-repeat;
+        background-position: 0%;
+        font-family: 'Times New Roman', Times, serif;
+        border: 1px solid white;
+        margin-top: 50px;
+        color: rgba(51, 110, 123);
+        font-size: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.8s ease-in-out;
+    }
+
+    .btnnn a {
+        text-decoration: none;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .btnnn:hover {
+        background-position: 100%;
+        transition: 1.5s;
+        background-color: gray;
+        box-shadow: 0 0 10px gray, 0 0 40px gray, 0 0 80px gray;
+        color: black !important;
+    }
+
+    .footerr {
+        width: 100%;
+        height: 100px;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+ 

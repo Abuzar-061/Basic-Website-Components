@@ -1,0 +1,50 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #image-slider {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slider-image {
+            width: 300px;
+            height: 300px;
+            display: none;
+        }
+
+        #prev-btn,
+        #next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #prev-btn {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            left: 10px;
+        }
+
+        #next-btn {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            right: 10px;
+        }

@@ -1,0 +1,34 @@
+.container {
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #my-form {
+            padding: 20px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 300px;
+            align-items: center;
+        }
+
+        input {
+            margin: 10px;
+            outline: none;
+            border-radius: 0;
+            border: none;
+            border-bottom: 1px solid black;
+        }
+
+        input[type='submit'] {
+            width: 150px;
+            background-color: black;
+            color: white;
+            border-radius: 2px;
+            height: 30px;
+        }

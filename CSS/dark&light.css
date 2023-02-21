@@ -1,0 +1,88 @@
+/* <!------------------------------ Dark-Mode & Light-Mode ------------------------->  */
+        :root {
+            --primary-color: black;
+            --secondary-color: gray;
+        }
+
+        .dark-theme {
+            --primary-color: gray;
+            --secondary-color: black;
+            --third-color: invert(100%);
+        }
+
+        /* <!------------------------------ Body ------------------------->  */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: var(--secondary-color);
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: var(--primary-color);
+        }
+
+        /* <!----------------NAVBAR Section-----------------> */
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .logo {
+            margin: 30px;
+        }
+
+        .nav {
+            margin: 30px;
+        }
+
+        .nav ul {
+            display: flex;
+        }
+
+        .nav li {
+            list-style: none;
+        }
+
+        .nav a {
+            text-decoration: none;
+            padding: 30px;
+        }
+
+        .nav a:hover {
+            color: orangered;
+        }
+
+        /* <!------------------------------ Content ------------------------->  */
+        .content {
+            position: relative;
+            top: 130px;
+        }
+
+        .content h1 {
+            font-size: 70px;
+            text-align: center;
+            color: orangered;
+        }
+
+        .content p {
+            text-align: center;
+        }
+
+        .content span {
+            color: orangered;
+        }
+
+        /* <!------------------------------ Dark-Mode & Light-Mode ------------------------->  */
+        .icon {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            filter: var(--third-color);
+        }
+
+        .icon:hover {
+            filter: invert(100%);
+        }

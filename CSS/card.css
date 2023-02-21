@@ -1,0 +1,64 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-image: radial-gradient(white, pink);
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        /*<!-- ----------------Card CSS------------------- --> */
+
+        .card {
+            width: 350px;
+            height: 300px;
+            border: 1px solid black;
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-image-slider {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            transition: 0.8s;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slider-image:hover {
+            transform: scale(1.2);
+        }
+
+        .button {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            position: relative;
+            cursor: pointer;
+            bottom: 100px;
+        }

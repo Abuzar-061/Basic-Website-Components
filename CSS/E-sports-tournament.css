@@ -1,0 +1,289 @@
+ html::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    html::-webkit-scrollbar-thumb {
+        background-color: rgb(201, 22, 22);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+
+    html::-webkit-scrollbar-track {
+        background-color: #333;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Century Gothic;
+    }
+
+    .containerr {
+        width: 100%;
+        height: 150vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(white, black);
+        background-size: cover;
+        background-position: center;
+        color: black;
+    }
+
+    span {
+        color: red;
+    }
+
+    .content {
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .immg {
+        width: 150px;
+        height: 120px;
+    }
+
+    .leftt {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .rightt {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Centerr {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .navv {
+        border-bottom: 5px solid red;
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+
+    .navbar {
+        background-color: #333;
+    }
+
+    .navbar a {
+        color: white !important;
+    }
+
+    .dropdown-menu a {
+        color: black !important;
+    }
+
+    .navbar-brand img {
+        width: 100px;
+    }
+
+    .ion {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding-right: 10px;
+    }
+
+    .hoverr {
+        color: wheat !important;
+        padding: 10px !important;
+        text-decoration: none;
+    }
+
+    ion-icon:hover {
+        color: red;
+        cursor: pointer;
+    }
+
+    .hoverr:hover {
+        color: red !important;
+    }
+
+    .nav-link:hover {
+        color: red !important;
+    }
+
+    .nav-item {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .ionn {
+        display: none;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn {
+        background-color: transparent;
+        border: 1px solid black;
+        border-radius: 10px;
+        transition: 0.8s;
+    }
+
+    .btn a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        border: 2px solid white;
+        background-color: #333;
+        color: white;
+    }
+
+    /* <!-- -------------------------------Content Second Page---------------------------------- --> */
+
+    .container2 {
+        border-top: 5px solid red;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .topp {
+        overflow: hidden;
+        margin: 2px;
+        border: 1px solid #333;
+        width: 300px;
+        justify-content: center;
+        text-align: center;
+        height: 300px;
+        border-radius: 35px;
+    }
+
+    .cardd {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+    }
+
+    .img-2 {
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .img-2 img {
+        height: 200px;
+        width: 300px;
+        transition: 0.2s ease-in-out;
+    }
+
+    .img-2 img:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+    .btn-2 {
+        margin-top: 10px;
+        margin-bottom: 100px;
+        border-radius: 10px;
+        height: 50px;
+        width: 300px;
+        background-color: #333;
+        transition: 0.8s;
+    }
+
+    .btn-2 a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .btn-2:hover {
+        background-color: black;
+        color: white;
+    }
+
+    /* <!-- -------------------------------Content Third Page---------------------------------- --> */
+
+    .container3 {
+        border-top: 5px solid red;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(rgba(255, 255, 255, 0.587), red);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .content3 {
+        width: 100%;
+        display: flex;
+    }
+
+    .left3 {
+        width: 100%;
+    }
+
+    .left3 img {
+        border-bottom: 5px solid white;
+        border-top: 5px solid white;
+        width: 100%;
+        height: 500px;
+    }
+
+    .right3 {
+        text-align: center;
+        justify-content: center;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* <!-- -------------------------------Sticky Links---------------------------------- --> */
+
+    .stickyy {
+        align-items: center;
+        bottom: 0;
+        right: 0;
+        position: fixed;
+    }
+
+    .link-s {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .link-s a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .font ion-icon {
+        margin: 7px;
+        color: black;
+        font-size: 25px;
+    }
+
+    .font ion-icon:hover {
+        color: red;
+    }
+ 
