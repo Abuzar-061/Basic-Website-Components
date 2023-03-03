@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAJVERI-CLOTHES</title>
+    <link rel="shortcut icon" href="img/Sun.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ========================Scoll_bar==================== */
+        html::-webkit-scrollbar {
+            width: 10px;
+            scroll-behavior: smooth;
+        }
+
+        html::-webkit-scrollbar-track {
+            background-color: black;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            background-color: #333;
+        }
+
+
+        /* ========================Nav-bar==================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            height: 60px;
+            width: 100%;
+            background-color: rgb(99, 81, 84);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo a {
+            color: #fff;
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        .menu-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .menu-btn__burger ion-icon {
+            color: #fff;
+            font-size: 50px;
+        }
+
+
+        .menu-nav {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgb(99, 81, 84);
+            padding: 20px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-nav__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .menu-nav__item {
+            margin-bottom: 20px;
+        }
+
+        .menu-nav__link {
+            color: #fff;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .menu-nav__link:hover {
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+        .menu-nav.active {
+            transform: translateX(0);
+        }
+
+        /* =========================Content========================= */
+        .container-1 {
+            padding: 0 20px;
+            width: 100%;
+            height: 150vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.678), rgba(0, 0, 0, 0.669)), url(img/Fashion.jp.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            flex-direction: column;
+        }
+
+        .content-1 {
+            color: #fff;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+        }
+
+        .content-1 h1 {
+            font-size: 80px;
+            color: #fff;
+        }
+
+
+        .btn-1 {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border-radius: 20px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            text-decoration: none;
+            color: white;
+            background-color: rgb(99, 81, 84);
+            font-size: 13px;
+            transition: 0.8s;
+        }
+
+        .btn-1:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* ==================Content-2=================== */
+
+        .container-2 {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .feature {
+            align-items: center;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .feature img {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+        }
+
+        .title {
+            padding-left: 100px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        .title::after {
+            content: '';
+            background-color: rgb(99, 81, 84);
+            width: 80px;
+            height: 5px;
+        }
+
+        .product {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+        }
+
+        .card-feature {
+            padding: 10px;
+        }
+
+        .card-img {
+            cursor: pointer;
+        }
+
+        /* ================Exclusive-Offer================ */
+
+        .exclusive {
+            background: radial-gradient(white, rgb(99, 81, 84));
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-top: 100px;
+            display: flex;
+        }
+
+        .right1 {
+            margin-right: 20px;
+            width: 50%;
+            padding: 0 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: gray;
+        }
+
+        .right1 h1 {
+            color: black;
+            font-size: 50px;
+            margin: 20px;
+        }
+
+        .right1 p {
+            color: black;
+        }
+
+        .left1 {
+            margin: 50px 10px;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left1 img {
+            width: 500px;
+        }
+
+        /* -------------Responsiveness--------------- */
+        @media only screen and (min-width: 100px) and (max-width: 800px) {
+            .feature {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .product {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .exclusive {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .right1 {
+                width: 100%;
+            }
+
+            .left1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .left1 img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- -------------------------Navbar----------------------- -->
+    <header>
+        <div class="logo">
+            <a href="#home">Hajveri-Cloth</a>
+        </div>
+        <div class="menu-btn">
+            <div class="menu-btn__burger">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </div>
+        <nav class="menu-nav">
+            <ul class="menu-nav__list">
+                <li class="menu-nav__item"><a href="#home" class="menu-nav__link">HOME</a></li>
+                <li class="menu-nav__item"><a href="#shop" class="menu-nav__link">SHOP</a></li>
+                <li class="menu-nav__item"><a href="#about-us" class="menu-nav__link">ABOUT US</a></li>
+                <li class="menu-nav__item"><a href="#contact-us" class="menu-nav__link">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ----------------------Container-1------------------- -->
+    <div class="container-1" id="home">
+        <div class="content-1">
+            <h1>Hajveri-Clothes</h1>
+            <p>Welcome to our website, your ultimate destination for fashion and style. <br> We are a premium clothing
+                brand that brings you the latest fashion trends<br> and styles, straight from the runway to your closet.
+            </p>
+            <button class="btn-1">SHOP NOW</button>
+        </div>
+    </div>
+    <!-- ----------------------Container-2------------------- -->
+    <div class="container-2" id="container-2">
+        <div class="feature">
+            <!-- --------------------Upload Your Brand------------------------ -->
+            <a href=""> <img src="img/category-1.jpg" alt="Reload"> </a>
+            <a href=""> <img src="img/category-2.jpg" alt="Reload"> </a>
+            <a href=""> <img src="img/category-3.jpg" alt="Reload"> </a>
+        </div>
+    </div>
+    <!-- ----------------------Container-3------------------- -->
+
+    <!-- Feature product -->
+    <div class="title">
+        <h1>Product Feature:-</h1>
+    </div>
+    <div class="product">
+        <div class="card">
+            <div class="card-img">
+                <img src="img/product-1.jpg" alt="Reload" width="200px" height="200px">
+            </div>
+            <div class="card-feature">
+                <h3>Red Printed T-Shirt</h3>
+                <br>
+                <p>$20.00/-</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="img/product-2.jpg" alt="Reload" width="200px" height="200px">
+            </div>
+            <div class="card-feature">
+                <h3>Black Hush Puppy Shoe</h3>
+                <br>
+                <p>$30.00/-</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="img/product-3.jpg" alt="Reload" width="200px" height="200px">
+            </div>
+            <div class="card-feature">
+                <h3>Gray Fitted Trouser</h3>
+                <br>
+                <p>$38.00/-</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="img/product-4.jpg" alt="Reload" width="200px" height="200px">
+            </div>
+            <div class="card-feature">
+                <h3>Blue Printed T-Shirt</h3>
+                <br>
+                <p>$30.00/-</p>
+            </div>
+        </div>
+    </div>
+    <!-- Latest Product -->
+    <div class="title">
+        <h1>Latest Feature:-</h1>
+    </div>
+    <div class="product">
+        <div class="card">
+            <div class="card-img">
+                <img src="img/product-12.jpg" alt="Reload" width="200px" height="200px">
+            </div>
+            <div class="card-feature">
+                <h3>Black Nike Trouser</h3>
+                <br>
+                <p>$30.00/-</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="img/product-11.jpg" alt="Reload" width="200px" height="200px">
+            </div>
+            <div class="card-feature">
+                <h3>Gray Hush Puppy Shoe</h3>
+                <br>
+                <p>$30.00/-</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="img/product-10.jpg" alt="Reload" width="200px" height="200px">
+            </div>
+            <div class="card-feature">
+                <h3>Black Ex-Trem Shoe</h3>
+                <br>
+                <p>$42.00/-</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="img/product-9.jpg" alt="Reload" width="200px" height="200px">
+            </div>
+            <div class="card-feature">
+                <h3>Roadster Watch Mens's</h3>
+                <br>
+                <p>$50.00/-</p>
+            </div>
+        </div>
+    </div>
+    <div class="product">
+        <div class="card">
+            <div class="card-img">
+                <img src="img/product-8.jpg" alt="Reload" width="200px" height="200px">
+            </div>
+            <div class="card-feature">
+                <h3>Black Fossil Watch</h3>
+                <br>
+                <p>$70.00/-</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="img/product-7.jpg" alt="Reload" width="200px" height="200px">
+            </div>
+            <div class="card-feature">
+                <h3>H-RX Socks</h3>
+                <br>
+                <p>$10.00/-</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="img/product-6.jpg" alt="Reload" width="200px" height="200px">
+            </div>
+            <div class="card-feature">
+                <h3>Black Panther T-Shirts</h3>
+                <br>
+                <p>$20.00/-</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="img/product-5.jpg" alt="Reload" width="200px" height="200px">
+            </div>
+            <div class="card-feature">
+                <h3>Gray High Shoe</h3>
+                <br>
+                <p>$100.00/-</p>
+            </div>
+        </div>
+    </div>
+    <!-- ----------------------Container-4------------------- -->
+
+    <!-- Exclusive -->
+    <div class="exclusive">
+        <div class="left1">
+            <img src="img/exclusive.png" alt="Reload" class="imgg">
+        </div>
+        <div class="right1">
+            <p>Exclusively Available On Redstore</p>
+            <h1>Smart Watch</h1>
+            <p>The Mi Smart watch band 4 features a 39.9% larger (than Mi Band 3) AMOLED Color
+                Full-touch display with adjustable brightness so everything is clear as can be.</p>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const menuBtn = document.querySelector(".menu-btn");
+        const menuNav = document.querySelector(".menu-nav");
+        const navItems = document.querySelectorAll(".menu-nav__item");
+
+        let showMenu = false;
+
+        menuBtn.addEventListener("click", toggleMenu);
+
+        function toggleMenu() {
+            if (!showMenu) {
+                menuBtn.classList.add("open");
+                menuNav.classList.add("active");
+            } else {
+                menuBtn.classList.remove("open");
+                menuNav.classList.remove("active");
+            }
+
+            showMenu = !showMenu;
+        }
+
+        navItems.forEach((item) => {
+            item.addEventListener("click", toggleMenu);
+        });
+
+    </script>
+
+    <!------------------------ Ion-Icon Link --------------------->
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+</body>
+
+</html>
