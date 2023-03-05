@@ -586,11 +586,19 @@
                 var passwordInput = document.getElementById("passwordInput");
                 if (passwordInput.type === "password") {
                     passwordInput.type = "text";
+                    document.querySelectorAll('.hand').forEach(hand => {
+                        hand.classList.remove('hide');
+                        hand.classList.add('peek');
+                    });
+
                 } else {
                     passwordInput.type = "password";
+                    document.querySelectorAll('.hand').forEach(hand => {
+                        hand.classList.remove('peek');
+                        hand.classList.add('hide');
+                    });
                 }
             }
-
         </script>
 </body>
 
