@@ -502,8 +502,9 @@
             </label>
             <label>
                 <div class="fa fa-commenting"></div>
-                <input class="password" type="password" autocomplete="off" placeholder="password" />
-                <button class="password-button"><i class='bx bx-show'></i></button>
+                <input class="password" type="password" id="passwordInput" autocomplete="off" placeholder="password" />
+                <button class="password-button" id="showPasswordButton" onclick="togglePasswordVisibility()"><i
+                        class='bx bx-show'></i></button>
             </label>
             <button class="login-button">Login</button>
         </div>
@@ -566,6 +567,7 @@
             }, 100));
 
             showPasswordButton.addEventListener('click', event => {
+
                 if (passwordInput.type === 'text') {
                     passwordInput.type = 'password';
                     document.querySelectorAll('.hand').forEach(hand => {
@@ -580,6 +582,15 @@
                     });
                 }
             });
+            function togglePasswordVisibility() {
+                var passwordInput = document.getElementById("passwordInput");
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                } else {
+                    passwordInput.type = "password";
+                }
+            }
+
         </script>
 </body>
 
