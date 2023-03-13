@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            color: greenyellow;
+            background-color: #2b323c;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-animation {
+            position: relative;
+            display: inline-block;
+        }
+
+        .text {
+            display: inline-block;
+            animation: typing 2s steps(20), blink .5s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 24px;
+        }
+
+        .container h1 {
+            font-weight: 80px;
+            font-size: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1> Hi..! I am <span class="Profession"></span></h1>
+    </div>
+
+    </div>
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".Profession", {
+            strings: ["PHP Developer", "Web Developer", "Freelancer"],
+            typeSpeed: 150,
+            backSpeed: 150,
+            loop: true
+        })
+    </script>
+</body>
+
+</html>
