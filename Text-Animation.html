@@ -5,67 +5,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
-        body {
+        .container {
+            width: 100%;
+            height: 100vh;
+            color: greenyellow;
+            background-color: black;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background: #000;
         }
 
-        .content {
+        .text-animation {
             position: relative;
+            display: inline-block;
         }
 
-        .content h2 {
+        .text {
+            display: inline-block;
+            animation: typing 2s steps(20), blink .5s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 24px;
+        }
+
+        .cursor {
             position: absolute;
-
-
-            transform: translate(-50%, -50%);
-            font-size: 3rem;
+            top: 0;
+            right: -10px;
+            width: 10px;
+            height: 100%;
+            background-color: #333;
+            animation: blink .5s step-end infinite;
         }
 
-        .content h2:nth-child(1) {
-            color: transparent;
-            -webkit-text-stroke: 2px red;
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
         }
 
-        .content h2:nth-child(2) {
-            color: red;
-            animation: animate 4s ease-in-out infinite;
-        }
+        @keyframes blink {
 
-        @keyframes animate {
-
-            0%,
-            100% {
-                clip-path: polygon(99% 49%, 86% 43%, 74% 41%, 62% 43%, 50% 49%, 39% 57%, 25% 61%, 12% 58%, 0 51%, 0 100%, 100% 100%);
+            from,
+            to {
+                opacity: 1
             }
 
             50% {
-                clip-path: polygon(99% 49%, 91% 58%, 77% 65%, 64% 60%, 50% 49%, 39% 42%, 28% 39%, 13% 44%, 0 51%, 0 100%, 100% 100%);
-
+                opacity: 0
             }
         }
     </style>
-    <title>water text animation</title>
 </head>
 
 <body>
-    <div class="content">
-        <h2>Abuzar</h2> <!--You can change the text-->
-        <h2>Abuzar</h2>
+    <div class="container">
+        <div class="text-animation">
+            <span class="text">Hi..! My Name is Muhammad Abuzar</span>
+            <div class="cursor"></div>
+        </div>
+
     </div>
+    <script>
+        const text = document.querySelector(".text");
+        const textContent = text.textContent;
+
+        text.textContent = "";
+
+        let index = 0;
+
+        function type() {
+            text.textContent += textContent[index++];
+            if (index < textContent.length) { setTimeout(type, 100); }
+        } setTimeout(type, 1000);
+    </script>
 </body>
 
 </html>
