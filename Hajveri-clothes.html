@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M-Collection</title>
+    <!-- /* ========================Bootstrap CSS==================== */ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <!-- /* ========================Fav Icon==================== */ -->
     <link rel="shortcut icon" href="img/Sun.png" type="image/x-icon">
     <style>
         * {
@@ -35,7 +38,7 @@
         /* ========================Nav-bar==================== */
 
         header {
-            position: fixed;
+            position: absolute;
             top: 0;
             height: 60px;
             width: 100%;
@@ -109,9 +112,10 @@
 
         /* =========================Content========================= */
         .container-1 {
+            overflow: hidden;
             padding: 0 20px;
             width: 100%;
-            height: 150vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -131,7 +135,7 @@
         }
 
         .content-1 h1 {
-            font-size: 80px;
+            font-size: 50px;
             color: #fff;
         }
 
@@ -206,33 +210,8 @@
             height: 5px;
         }
 
-        .flex-3 {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
 
-        .product {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
 
-        .card {
-            display: flex;
-            flex-direction: column;
-            margin: 20px;
-        }
-
-        .card-feature {
-            padding: 10px;
-        }
-
-        .card-img {
-            cursor: pointer;
-        }
 
         .btn-2 {
             margin-top: 10px;
@@ -258,29 +237,6 @@
             color: white;
         }
 
-        .btn-3 {
-            margin-top: 10px;
-            padding: 10px;
-            border: none;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            width: 100px;
-            height: 40px;
-            display: flex;
-            text-decoration: none;
-            color: white;
-            background-color: rgb(99, 81, 84);
-            font-size: 13px;
-            transition: 0.8s;
-            cursor: pointer;
-        }
-
-        .btn-3:hover {
-            background-color: black;
-            color: white;
-        }
 
         .btn-4 {
             margin-top: 10px;
@@ -376,6 +332,265 @@
             width: 500px;
         }
 
+
+        /* <!-- ----------------------Contact-Us------------------- --> */
+
+
+        .section-5 {
+            background: linear-gradient(rgb(99, 81, 84), rgba(0, 0, 0, 0.833));
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* <!-- ---------------------- Container-5 ------------------- --> */
+
+
+        .container-5 {
+            background: linear-gradient(rgb(99, 81, 84), rgba(0, 0, 0, 0.833));
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .item {
+            cursor: pointer;
+            width: 60%;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item:hover {
+            transform: scale(0.95);
+            transition: all 0.3s;
+        }
+
+        .ion {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 7px;
+        }
+
+        .item--1 {
+            background: #c7c7ff;
+        }
+
+        .item--2 {
+            background: #ffd8be;
+        }
+
+        .item--3 {
+            background: #a9ecbf;
+        }
+
+        .quantity {
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .text {
+            font-size: 20px;
+            font-family: inherit;
+            font-weight: 600;
+        }
+
+        .text--1 {
+            color: rgba(149, 149, 255, 1);
+        }
+
+        .text--2 {
+            color: rgba(252, 161, 71, 1);
+        }
+
+        .text--3 {
+            color: rgba(66, 193, 110, 1);
+        }
+
+        .button-6 {
+            margin-top: 70px;
+            padding: 0.9em 1.8em;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 4px;
+            color: transparent;
+            border: 3px solid rgba(252, 161, 71, 1);
+            font-size: 14px;
+            position: relative;
+            font-family: inherit;
+            background: transparent;
+        }
+
+        .button-6::before {
+            content: "View All";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #363636;
+            color: rgba(252, 161, 71, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s;
+        }
+
+        .button-6:hover::before {
+            left: 100%;
+            transform: scale(0) rotateY(360deg);
+            opacity: 0;
+        }
+
+        .button-6::after {
+            content: "View All";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #363636;
+            color: rgba(252, 161, 71, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s;
+            transform: scale(0) rotateY(0deg);
+            opacity: 0;
+        }
+
+        .button-6:hover::after {
+            left: 0;
+            transform: scale(1) rotateY(360deg);
+            opacity: 1;
+        }
+
+        .button-7 {
+            margin-top: 70px;
+            padding: 0.9em 1.8em;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 4px;
+            color: transparent;
+            border: 3px solid rgba(149, 149, 255, 1);
+            font-size: 14px;
+            position: relative;
+            font-family: inherit;
+            background: transparent;
+        }
+
+        .button-7::before {
+            content: "View All";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #363636;
+            color: rgba(149, 149, 255, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s;
+        }
+
+        .button-7:hover::before {
+            left: 100%;
+            transform: scale(0) rotateY(360deg);
+            opacity: 0;
+        }
+
+        .button-7::after {
+            content: "View All";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #363636;
+            color: rgba(149, 149, 255, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s;
+            transform: scale(0) rotateY(0deg);
+            opacity: 0;
+        }
+
+        .button-7:hover::after {
+            left: 0;
+            transform: scale(1) rotateY(360deg);
+            opacity: 1;
+        }
+
+        .button-5 {
+            margin-top: 70px;
+            padding: 0.9em 1.8em;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 4px;
+            color: transparent;
+            border: 3px solid rgba(66, 193, 110, 1);
+            font-size: 14px;
+            position: relative;
+            font-family: inherit;
+            background: transparent;
+        }
+
+        .button-5::before {
+            content: "View All";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #363636;
+            color: rgba(66, 193, 110, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s;
+        }
+
+        .button-5:hover::before {
+            left: 100%;
+            transform: scale(0) rotateY(360deg);
+            opacity: 0;
+        }
+
+        .button-5::after {
+            content: "View All";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #363636;
+            color: rgba(66, 193, 110, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s;
+            transform: scale(0) rotateY(0deg);
+            opacity: 0;
+        }
+
+        .button-5:hover::after {
+            left: 0;
+            transform: scale(1) rotateY(360deg);
+            opacity: 1;
+        }
+
+
+
         /* <!-- ----------------------Footer------------------- --> */
         .footer {
             position: relative;
@@ -439,6 +654,48 @@
                 width: 200px;
                 height: 200px;
             }
+
+            .button-6 {
+                margin-top: 70px;
+                padding: 10px 5px;
+                text-transform: uppercase;
+                text-decoration: none;
+                letter-spacing: 4px;
+                color: transparent;
+                border: 3px solid rgba(252, 161, 71, 1);
+                font-size: 14px;
+                position: relative;
+                font-family: inherit;
+                background: transparent;
+            }
+
+            .button-5 {
+                margin-top: 70px;
+                padding: 10px 5px;
+                text-transform: uppercase;
+                text-decoration: none;
+                letter-spacing: 4px;
+                color: transparent;
+                border: 3px solid rgba(66, 193, 110, 1);
+                font-size: 14px;
+                position: relative;
+                font-family: inherit;
+                background: transparent;
+            }
+
+            .button-7 {
+                margin-top: 70px;
+                padding: 10px 5px;
+                text-transform: uppercase;
+                text-decoration: none;
+                letter-spacing: 4px;
+                color: transparent;
+                border: 3px solid rgba(149, 149, 255, 1);
+                font-size: 14px;
+                position: relative;
+                font-family: inherit;
+                background: transparent;
+            }
         }
     </style>
 </head>
@@ -489,141 +746,10 @@
     <div class="title">
         <h1>Product Feature:-</h1>
     </div>
-    <div class="flex-3">
-        <div class="product">
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/product-1.jpg" alt="Reload" width="200px" height="200px">
-                </div>
-                <div class="card-feature">
-                    <h3>Red Printed T-Shirt</h3>
-                    <br>
-                    <p>$20.00/-</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/product-2.jpg" alt="Reload" width="200px" height="200px">
-                </div>
-                <div class="card-feature">
-                    <h3>Black Hush Puppy Shoe</h3>
-                    <br>
-                    <p>$30.00/-</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/product-3.jpg" alt="Reload" width="200px" height="200px">
-                </div>
-                <div class="card-feature">
-                    <h3>Gray Fitted Trouser</h3>
-                    <br>
-                    <p>$38.00/-</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/product-4.jpg" alt="Reload" width="200px" height="200px">
-                </div>
-                <div class="card-feature">
-                    <h3>Blue Printed T-Shirt</h3>
-                    <br>
-                    <p>$30.00/-</p>
-                </div>
-            </div>
-        </div>
-        <button class="btn-3" id="btn">VIEW ALL</button>
-    </div>
+
     <!-- Latest Product -->
     <div class="title">
         <h1>Latest Feature:-</h1>
-    </div>
-    <div class="product">
-        <div class="card">
-            <div class="card-img">
-                <img src="img/product-12.jpg" alt="Reload" width="200px" height="200px">
-            </div>
-            <div class="card-feature">
-                <h3>Black Nike Trouser</h3>
-                <br>
-                <p>$30.00/-</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-img">
-                <img src="img/product-11.jpg" alt="Reload" width="200px" height="200px">
-            </div>
-            <div class="card-feature">
-                <h3>Gray Hush Puppy Shoe</h3>
-                <br>
-                <p>$30.00/-</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-img">
-                <img src="img/product-10.jpg" alt="Reload" width="200px" height="200px">
-            </div>
-            <div class="card-feature">
-                <h3>Black Ex-Trem Shoe</h3>
-                <br>
-                <p>$42.00/-</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-img">
-                <img src="img/product-9.jpg" alt="Reload" width="200px" height="200px">
-            </div>
-            <div class="card-feature">
-                <h3>Roadster Watch Mens's</h3>
-                <br>
-                <p>$50.00/-</p>
-            </div>
-        </div>
-    </div>
-    <div class="flex-3">
-        <div class="product">
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/product-8.jpg" alt="Reload" width="200px" height="200px">
-                </div>
-                <div class="card-feature">
-                    <h3>Black Fossil Watch</h3>
-                    <br>
-                    <p>$70.00/-</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/product-7.jpg" alt="Reload" width="200px" height="200px">
-                </div>
-                <div class="card-feature">
-                    <h3>H-RX Socks</h3>
-                    <br>
-                    <p>$10.00/-</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/product-6.jpg" alt="Reload" width="200px" height="200px">
-                </div>
-                <div class="card-feature">
-                    <h3>Black Panther T-Shirts</h3>
-                    <br>
-                    <p>$20.00/-</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img">
-                    <img src="img/product-5.jpg" alt="Reload" width="200px" height="200px">
-                </div>
-                <div class="card-feature">
-                    <h3>Gray High Shoe</h3>
-                    <br>
-                    <p>$100.00/-</p>
-                </div>
-            </div>
-        </div>
-        <button class="btn-4" id="btn">VIEW ALL</button>
     </div>
     <!-- ----------------------Container-4------------------- -->
 
@@ -640,6 +766,32 @@
             <button class="btn-4" id="btn">VIEW ALL</button>
         </div>
     </div>
+    <!-- ----------------------Container-5------------------- -->
+    <div class="container-5">
+        <div class="item item--1">
+            <img src="img/Men.png" alt="Men's Collection" class="ion">
+            <span class="quantity" id="quantity1"> </span>
+            <span class="text text--1"> Men's </span>
+            <button class="button-7"><span></span>View All</button>
+        </div>
+        <div class="item item--2">
+            <img src="img/Children.png" alt="Children's Collection" class="ion">
+            <span class="quantity" id="quantity2"> </span>
+            <span class="text text--2"> Children's </span>
+            <button class="button-6"><span></span>View All</button>
+        </div>
+        <div class="item item--3">
+            <img src="img/Women.png" alt="Children's Collection" class="ion">
+            <span class="quantity" id="quantity3"> </span>
+            <span class="text text--3"> Women's </span>
+            <button class="button-5"><span></span>View All</button>
+        </div>
+    </div>
+
+    <!-- ----------------------Contact-US------------------- -->
+    <section class="section-5">
+
+    </section>
     <!-- ----------------------Footer------------------- -->
     <div class="footer">
         <p class="footer-p">Copyright 2023, All right Reserved <br>Design by Muhammad Abuzar</p>
@@ -649,7 +801,6 @@
 
 
     <script>
-        // <!------------------------ Nav-Bar Script --------------------->
         const menuBtn = document.querySelector(".menu-btn");
         const menuNav = document.querySelector(".menu-nav");
         const navItems = document.querySelectorAll(".menu-nav__item");
@@ -681,10 +832,61 @@
             window.location.href = "#exclusive";
         });
 
+        // <!------------------------ Title --------------------->
+        var title = document.title;
+        window.addEventListener("blur", () => {
+            document.title = "Come Back :(";
+        })
+        window.addEventListener("focus", () => {
+            document.title = "M-Collecton";
+        });
+
+        // <!------------------------ Number Animation --------------------->
+
+        var numm1 = document.getElementById('quantity1');
+        let counter1 = 0;
+        setInterval(() => {
+            if (counter1 == 65) {
+                clearInterval();
+            }
+            else {
+                counter1 += 1;
+                numm1.innerHTML = counter1 + "+"
+            }
+
+        }, 30);
+
+        var numm2 = document.getElementById('quantity2');
+        let counter2 = 0;
+        setInterval(() => {
+            if (counter2 == 63) {
+                clearInterval();
+            }
+            else {
+                counter2 += 1;
+                numm2.innerHTML = counter2 + "+"
+            }
+
+        }, 30);
+        var numm3 = document.getElementById('quantity3');
+        let counter3 = 0;
+        setInterval(() => {
+            if (counter3 == 70) {
+                clearInterval();
+            }
+            else {
+                counter3 += 1;
+                numm3.innerHTML = counter3 + "+"
+            }
+
+        }, 30);
+
     </script>
 
     <!------------------------ Ion-Icon Link --------------------->
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <!------------------------ Bootstrap Links --------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
