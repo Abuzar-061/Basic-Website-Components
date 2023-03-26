@@ -554,17 +554,19 @@
                     </h6>
                 </div>
                 <!------------------- Button ------------------>
-                <button class="game-button">
-                    Hire me
-                    <div id="clip">
-                        <div id="leftTop" class="corner"></div>
-                        <div id="rightBottom" class="corner"></div>
-                        <div id="rightTop" class="corner"></div>
-                        <div id="leftBottom" class="corner"></div>
-                    </div>
-                    <span id="rightArrow" class="arrow"></span>
-                    <span id="leftArrow" class="arrow"></span>
-                </button>
+                <a href="https://wa.me/923457886992?" target="_blank">
+                    <button class="game-button" id="game-btn">
+                        Hire me
+                        <div id="clip">
+                            <div id="leftTop" class="corner"></div>
+                            <div id="rightBottom" class="corner"></div>
+                            <div id="rightTop" class="corner"></div>
+                            <div id="leftBottom" class="corner"></div>
+                        </div>
+                        <span id="rightArrow" class="arrow"></span>
+                        <span id="leftArrow" class="arrow"></span>
+                    </button>
+                </a>
                 <!------------------- End Button ------------------>
             </div>
             <!---------------------- End Content -------------------->
@@ -646,6 +648,11 @@
             document.body.classList.toggle("orangered-theme");
             theme.style.display = "none";
         };
+
+        // _______ Btn Direct To whatsapp ___________
+        const whatsapp = document.getElementById("game-btn");
+        whatsapp.href = "https://wa.me/923457886992?";
+        whatsapp.target = "_blank";
 
 
 
