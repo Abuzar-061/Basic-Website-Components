@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link href="https://fonts.googleapis.com/css?family=Futura&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/Sun.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:ital,wght@200;300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap');
+
+        :root {
+            --typedtext: orangered;
+            --active: orangered;
+            --logo-border: orangered;
+            --name: orangered;
+            --button-hover: orangered;
+            --game-button: orangered;
+            --game-s-button: orange;
+        }
+
+        .orangered-theme {
+            --name: orangered;
+            --typedtext: orangered;
+            --logo-border: orangered;
+            --active: orangered;
+            --button-hover: orangered;
+            --game-button: orange;
+            --game-s-button: orangered;
+        }
+
+
+        .greenYellow-theme {
+            --name: greenyellow;
+            --logo-border: greenyellow;
+            --active: greenyellow;
+            --typedtext: greenyellow;
+            --button-hover: greenyellow;
+            --game-button: greenYellow;
+            --game-s-button: Yellow;
+        }
+
+        .orange-theme {
+            --name: orange;
+            --active: orange;
+            --typedtext: orange;
+            --logo-border: orange;
+            --button-hover: orange;
+            --game-button: Yellow;
+            --game-s-button: orange;
+        }
+
+        .blue-theme {
+            --name: blue;
+            --active: blue;
+            --typedtext: blue;
+            --logo-border: blue;
+            --button-hover: blue;
+            --game-button: darkblue;
+            --game-s-button: blue;
+
+        }
+
+        .pink-theme {
+            --name: pink;
+            --active: pink;
+            --typedtext: pink;
+            --logo-border: pink;
+            --button-hover: pink;
+            --game-button: rgb(181, 47, 67);
+            --game-s-button: pink;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .section {
+            width: 100%;
+            min-height: 100vh;
+
+        }
+
+        .main-container {
+            overflow: hidden;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .aside-nav {
+            width: 400px;
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #222221;
+        }
+
+        .aside-Content {
+            width: 100%;
+            min-height: 100%;
+            padding: 20px 130px;
+            background-color: #0f0f0e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .aside-nav .logo {
+            position: absolute;
+            top: 30px;
+            font-size: 20px;
+        }
+
+        .aside-nav .logo a {
+            color: white;
+            padding: 40px;
+            font-size: 25px;
+            letter-spacing: 5px;
+            position: relative;
+        }
+
+        .aside-nav .logo a span {
+            font-family: 'Clicker Script', cursive;
+            font-size: 60px;
+        }
+
+        .aside-nav .logo a::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-bottom: 5px solid var(--typedtext);
+            border-left: 5px solid var(--typedtext);
+            bottom: 0;
+            left: 0;
+        }
+
+        .aside-nav .logo a::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-top: 5px solid var(--typedtext);
+            border-right: 5px solid var(--typedtext);
+            top: 0;
+            right: 0;
+        }
+
+        .nav {
+            margin-top: 140px;
+        }
+
+        .nav li {
+            list-style: none;
+            padding: 10px 20px;
+            border-bottom: 1px solid rgb(59, 51, 51);
+        }
+
+        .nav li a {
+            color: white;
+            font-weight: bold;
+            font-family: 'Poppins', cursive;
+            margin-top: 20px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .nav ion-icon {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .nav li .active {
+            color: var(--active);
+        }
+
+        /* -------------Content--------------- */
+
+
+        .info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name h2 {
+            font-size: 20px;
+            color: white;
+            font-family: 'Poppins';
+        }
+
+        .name h2 span i {
+            color: var(--name);
+            font-family: 'Clicker Script', cursive;
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .animation h2 {
+            font-size: 40px !important;
+            color: white;
+        }
+
+        .animation h2 span i {
+            font-family: 'Clicker Script', cursive;
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .animation h2 {
+            margin-top: 10px;
+            font-size: 20px;
+            color: white;
+        }
+
+        #typed-container {
+            font-family: 'Clicker Script', cursive;
+            color: var(--typedtext);
+        }
+
+        .description h6 {
+            color: white;
+            font-family: 'Clicker Script', cursive;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+
+        /* <!------------------- Button ------------------> */
+
+
+        .game-button {
+            margin-top: 30px;
+            position: relative;
+            width: 11em;
+            height: 4em;
+            outline: none;
+            transition: 0.1s;
+            background-color: transparent;
+            border: none;
+            font-size: 13px;
+            font-weight: bold;
+            color: #ddebf0;
+            cursor: pointer;
+        }
+
+        #clip {
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            border: 5px double var(--color);
+            box-shadow: inset 0px 0px 15px darkred;
+            -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+
+        .arrow {
+            position: absolute;
+            transition: 0.2s;
+            background-color: var(--game-button);
+            top: 35%;
+            width: 11%;
+            height: 30%;
+        }
+
+        #leftArrow {
+            left: -13.5%;
+            -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
+        }
+
+        #rightArrow {
+            -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
+            left: 102%;
+        }
+
+        .game-button:hover #rightArrow {
+            background-color: var(--game-s-button);
+            left: -15%;
+            animation: 0.6s ease-in-out both infinite alternate rightArrow8;
+        }
+
+        .game-button:hover #leftArrow {
+            background-color: var(--game-button);
+            left: 103%;
+            animation: 0.6s ease-in-out both infinite alternate leftArrow8;
+        }
+
+        .corner {
+            position: absolute;
+            width: 4em;
+            height: 4em;
+            background-color: var(--game-s-button);
+            box-shadow: inset 1px 1px 8px var(--game-button);
+            transform: scale(1) rotate(45deg);
+            transition: 0.2s;
+        }
+
+        #rightTop {
+            top: -1.98em;
+            left: 91%;
+        }
+
+        #leftTop {
+            top: -1.96em;
+            left: -3.0em;
+        }
+
+        #leftBottom {
+            top: 2.10em;
+            left: -2.15em;
+        }
+
+        #rightBottom {
+            top: 45%;
+            left: 88%;
+        }
+
+        .game-button:hover #leftTop {
+            animation: 0.1s ease-in-out 0.05s both changeColor8,
+                0.2s linear 0.4s both lightEffect8;
+        }
+
+        .game-button:hover #rightTop {
+            animation: 0.1s ease-in-out 0.15s both changeColor8,
+                0.2s linear 0.4s both lightEffect8;
+        }
+
+        .game-button:hover #rightBottom {
+            animation: 0.1s ease-in-out 0.25s both changeColor8,
+                0.2s linear 0.4s both lightEffect8;
+        }
+
+        .game-button:hover #leftBottom {
+            animation: 0.1s ease-in-out 0.35s both changeColor8,
+                0.2s linear 0.4s both lightEffect8;
+        }
+
+        .game-button:hover .corner {
+            transform: scale(1.25) rotate(45deg);
+        }
+
+        .game-button:hover #clip {
+            animation: 0.2s ease-in-out 0.55s both greenLight8;
+            --color: var(--game-s-button);
+        }
+
+        @keyframes changeColor8 {
+            from {
+                background-color: var(--game-button);
+            }
+
+            to {
+                background-color: var(--game-s-button);
+            }
+        }
+
+        @keyframes lightEffect8 {
+            from {
+                box-shadow: 1px 1px 5px var(--game-s-button);
+            }
+
+            to {
+                box-shadow: 0 0 2px var(--game-button);
+            }
+        }
+
+        @keyframes greenLight8 {
+            from {}
+
+            to {
+                box-shadow: inset 0px 0px 32px var(--game-s-button);
+            }
+        }
+
+        @keyframes leftArrow8 {
+            from {
+                transform: translate(0px);
+            }
+
+            to {
+                transform: translateX(10px);
+            }
+        }
+
+        @keyframes rightArrow8 {
+            from {
+                transform: translate(0px);
+            }
+
+            to {
+                transform: translateX(-10px);
+            }
+        }
+
+        /* <!------------------- End Button ------------------> */
+
+        /* ------------------ Links ----------------------*/
+        .links {
+            position: absolute;
+            top: 50px;
+            right: 2px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .D-L-Mode {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 5px #d4bebe98, 0 0 5px #d4bebe98;
+            background-color: #d4bebe13;
+            color: white;
+            margin: 10px;
+            width: 40px;
+            font-size: 30px;
+            height: 40px;
+            font-size: 25px;
+            border-radius: 50%;
+        }
+
+        .settings {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #d4bebe13;
+            box-shadow: 0 0 5px #d4bebe98, 0 0 5px #d4bebe98;
+            color: white;
+            margin: 10px;
+            width: 40px;
+            font-size: 30px;
+            height: 40px;
+            font-size: 25px;
+            border-radius: 50%;
+        }
+
+        .settings:hover,
+        .D-L-Mode:hover {
+            color: var(--button-hover);
+        }
+
+        ion-icon:hover {
+            animation: rotate 5s infinite linear;
+            cursor: pointer;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* <!-------------------- Theme -------------------> */
+        .theme {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            right: 150px;
+            bottom: 10px;
+            background-color: #d4bebe03;
+            box-shadow: 0 0 5px #d4bebe7a, 0 0 5px #d4bebe6d;
+            width: 250px;
+            padding: 20px;
+            height: 100px;
+        }
+
+        .theme h2 {
+            color: #ddebf0;
+        }
+
+        .settings:hover,
+        .D-L-Mode:hover {
+            color: var(--button-hover);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .color {
+            margin: 10px 0px 0px 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #pink {
+            background-color: pink;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #orange {
+            background-color: orange;
+        }
+
+        #greenYellow {
+            background-color: greenyellow;
+        }
+
+        #orangered {
+            background-color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-------------------- Aside Navbar ------------------->
+        <div class="aside-nav">
+            <div class="logo">
+                <a href="#Home"><span>A</span>buzar</a>
+            </div>
+            <div class="nav">
+                <li><a href="#" class="active"><ion-icon name="home-outline"></ion-icon>Home</a></li>
+                <li><a href="#"><ion-icon name="person-outline"></ion-icon>About</a></li>
+                <li><a href="#"><ion-icon name="briefcase-outline"></ion-icon>Portfolio</a></li>
+                <li><a href="#"><ion-icon name="list-outline"></ion-icon>Services</a></li>
+                <li><a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact</a></li>
+            </div>
+        </div>
+        <!-------------------- End Aside Navbar ------------------->
+
+        <!----------------- Content -------------->
+
+        <div class="aside-Content" id="Home">
+            <div class="info">
+                <div class="name">
+                    <h2>Hello,my name is <span><i>Muhammad Abuzar</i></span></h2>
+                </div>
+                <div class="animation">
+                    <h2>I'm a <span id="typed-container"></span></h2>
+                </div>
+                <div class="description">
+                    <h6>I'm a Web Designer and Developer with extensive experience of 3
+                        years.My<br> expertise is to create and design website, Graphic Design and many more...
+                    </h6>
+                </div>
+                <!------------------- Button ------------------>
+                <button class="game-button">
+                    Hire me
+                    <div id="clip">
+                        <div id="leftTop" class="corner"></div>
+                        <div id="rightBottom" class="corner"></div>
+                        <div id="rightTop" class="corner"></div>
+                        <div id="leftBottom" class="corner"></div>
+                    </div>
+                    <span id="rightArrow" class="arrow"></span>
+                    <span id="leftArrow" class="arrow"></span>
+                </button>
+                <!------------------- End Button ------------------>
+            </div>
+            <!---------------------- End Content -------------------->
+
+            <!---------------------- Card -------------------->
+            <!-- ... -->
+            <!------------------- End Card ------------------>
+            <div class="links">
+                <div class="settings" id="settings"><ion-icon name="settings-outline"></ion-icon></div>
+                <div class="D-L-Mode" id="D-L-Mode"><ion-icon name="sunny-outline"></ion-icon></div>
+            </div>
+            <div class="theme" id="theme">
+                <h2>Theme Colors</h2>
+                <div class="flex">
+                    <span class="color" id="blue" onclick="blue()"></span>
+                    <span class="color" id="orange" onclick="orange()"></span>
+                    <span class="color" id="greenYellow" onclick="greenyellow()"></span>
+                    <span class="color" id="orangered" onclick="orangered()"></span>
+                    <span class="color" id="pink" onclick="pink()"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!----------------- Text Animation JS -------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+    <script defer async>
+        // <!----------------- ION ICON -------------->
+        var title = document.title;
+        window.addEventListener("blur", () => {
+            document.title = "Come Back :(";
+        })
+        window.addEventListener("focus", () => {
+            document.title = "PortFolio";
+        });
+        // <!----------------- Text Animation -------------->
+        var typed = new Typed('#typed-container', {
+            strings: ['Web Developer', 'Graphic Designer', 'SEO Expert'],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true
+        });
+        // <!----------------- Settings JS -------------->
+        var settings = document.getElementById("settings");
+        var Modes = document.getElementById("D-L-Mode");
+        var theme = document.getElementById("theme");
+        settings.addEventListener("click", () => {
+            theme.style.display = "block";
+        });
+        Modes.addEventListener("click", () => {
+            theme.style.display = "block";
+        });
+
+        // _______ Blue Theme ___________
+        function blue() {
+            document.body.classList.toggle("blue-theme");
+            theme.style.display = "none";
+        };
+        // _______ Pink Theme ___________
+        function pink() {
+            document.body.classList.toggle("pink-theme");
+            theme.style.display = "none";
+        };
+        // _______ Blue Theme ___________
+        function greenyellow() {
+            document.body.classList.toggle("greenYellow-theme");
+            theme.style.display = "none";
+        };
+
+        // _______ Orange Theme ___________
+        function orange() {
+            document.body.classList.toggle("orange-theme");
+            theme.style.display = "none";
+        };
+        // _______ Orangered Theme ___________
+        function orangered() {
+            document.body.classList.toggle("orangered-theme");
+            theme.style.display = "none";
+        };
+
+
+
+    </script>
+    <!----------------- ION ICON -------------->
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+</body>
+
+</html>
